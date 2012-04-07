@@ -4,6 +4,7 @@
  */
 package wad.spring.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,26 +41,39 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void sendOrAcceptFriendRequestByNameToById(String username, Long id) {
         User addingUser = userRepository.findByUsername(username);
         User addedUser = userRepository.findOne(id);
-        if (addedUser.getPendingFriendRequests().contains(addingUser)) {
-            addedUser.getPendingFriendRequests().add(addingUser);
-        } 
-        
-        if (addingUser.getPendingFriendRequests().contains(addedUser)) {
-            addedUser.getPendingFriendRequests().remove(addingUser);
-            addingUser.getPendingFriendRequests().remove(addedUser);
-            addedUser.getFriends().add(addingUser);
+
+        if (!addingUser.getFriends().contains(addedUser)) {
             addingUser.getFriends().add(addedUser);
         }
-        
+        if (!addedUser.getFriends().contains(addingUser)) {
+            addedUser.getFriends().add(addingUser);
+        }
+
         userRepository.save(addedUser);
         userRepository.save(addingUser);
     }
 
     @Override
-    public User findOny(Long id) {
+    @Transactional(readOnly = true)
+    public User findOne(Long id) {
         return userRepository.findOne(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> getUnaddedAndNotSelf(String username) {
+        User user = userRepository.findByUsername(username);
+        List<User> friends = user.getFriends();
+        ArrayList<User> unadded = new ArrayList<User>();
+        for (User u : userRepository.findAll()) {
+            if (!u.equals(user) && !friends.contains(u)) {
+                unadded.add(u);
+            }
+        }
+        return unadded;
     }
 }

@@ -45,15 +45,14 @@ public class UserController {
     }
     
     @RequestMapping(value = "/friendRequests", method = RequestMethod.GET)
-    public String showFriendRequestsAndUnaddedFriends(Principal principal, Model model) {
-        model.addAttribute("pendingRequests", userService.findByUsername(principal.getName()).getPendingFriendRequests());
-        //Add unadded firends to model - means to make such a method to service
-        return "friendRequestPage";
+    public String showUnaddedFriends(Principal principal, Model model) {
+        model.addAttribute("unadded", userService.getUnaddedAndNotSelf(principal.getName()));
+        return "user/friendRequestPage";
     }
     
     @RequestMapping(value = "/friendRequests/{userId}", method = RequestMethod.GET)
     public String processFriendRequest(@PathVariable Long userId, Principal principal) {
         userService.sendOrAcceptFriendRequestByNameToById(principal.getName(), userId);
-        return "redirect:/user/friendRequests";
+        return "redirect:/user/friends";
     }
 }

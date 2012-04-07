@@ -17,14 +17,12 @@ public class User implements Serializable {
     private String password;
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Role> roles;
-    @ManyToOne
-    private List<User> pendingFriendRequests;
     
     @OneToMany
     private List<User> friends;
     
     @ManyToMany
-    private Queue<Place> history;
+    private List<Place> history;
     
     @Override
     public boolean equals(Object o) {
@@ -93,19 +91,11 @@ public class User implements Serializable {
         this.friends = friends;
     }
 
-    public List<User> getPendingFriendRequests() {
-        return pendingFriendRequests;
-    }
-
-    public void setPendingFriendRequests(List<User> pendingFriendRequests) {
-        this.pendingFriendRequests = pendingFriendRequests;
-    }
-
-    public Queue<Place> getHistory() {
+    public List<Place> getHistory() {
         return history;
     }
 
-    public void setHistory(Queue<Place> history) {
+    public void setHistory(List<Place> history) {
         this.history = history;
     }
     

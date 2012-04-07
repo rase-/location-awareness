@@ -1,9 +1,4 @@
-<%-- 
-    Document   : friends
-    Created on : Apr 7, 2012, 1:43:57 PM
-    Author     : tonykovanen
---%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +8,9 @@
     </head>
     <body>
         <h1>Friend list</h1>
+        <c:forEach var="friend" items="${friends}">
+            <p>${friend.username}: ${friend.name}</p>
+        </c:forEach>
+            <a href=<c:url value="/user/friendRequests" />>Friend request page</a>
     </body>
 </html>
