@@ -10,8 +10,8 @@
 
     <!-- osoitteiden rajoitus -->
     <http use-expressions="true">
-        <intercept-url pattern="/customer/**" access="hasRole('customer')" />
-        <intercept-url pattern="/student/**" access="hasRole('student')" />
+        <intercept-url pattern="/user/**" access="hasRole('user')" />
+        <intercept-url pattern="/admin/**" access="hasRole('admin')" />
         <intercept-url pattern="/**" access="permitAll" />
         
         <!-- huom! kun teet sovellusta tuotantokäyttöä varten, permitAll-oletus ei ole hyvä idea! /** -->

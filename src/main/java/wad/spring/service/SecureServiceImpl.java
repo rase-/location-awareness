@@ -33,45 +33,48 @@ public class SecureServiceImpl implements SecureService {
             return;
         }
 
-        User matti = new User();
-        matti.setUsername("matti");
-        matti.setPassword("bonus");
-        matti = userRepository.save(matti);
+        User user = new User();
+        user.setUsername("testuser");
+        user.setPassword("testuser");
+        user.setName("testuser");
+        user = userRepository.save(user);
 
 
         List<Role> roles = new ArrayList();
 
         Role role = new Role();
-        role.setRolename("customer");
-        roles.add(role);
-        role = new Role();
-        role.setRolename("assistant");
+        role.setRolename("user");
         roles.add(role);
         
-        matti.setRoles(roles);
+        user.setRoles(roles);
         
-        User arto = new User();
-        arto.setUsername("arto");
-        arto.setPassword("av");
-        arto = userRepository.save(arto);
+        User admin = new User();
+        admin.setUsername("testadmin");
+        admin.setPassword("testadmin");
+        admin.setName("testadmin");
+        admin = userRepository.save(admin);
 
 
         roles = new ArrayList();
 
         role = new Role();
-        role.setRolename("student");
+        role.setRolename("admin");
         roles.add(role);
         
-        arto.setRoles(roles);
+        admin.setRoles(roles);
         
         User tony = new User();
         tony.setUsername("tony");
         tony.setPassword("lol");
+        tony.setName("Tony Kovanen");
         tony = userRepository.save(tony);
         
         roles = new ArrayList();
         role = new Role();
-        role.setRolename("student");
+        role.setRolename("user");
+        roles.add(role);
+        role = new Role();
+        role.setRolename("admin");
         roles.add(role);
         
         tony.setRoles(roles);

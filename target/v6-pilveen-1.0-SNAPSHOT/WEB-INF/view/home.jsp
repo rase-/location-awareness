@@ -4,12 +4,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Home</title>
     </head>
     <body>
-        <h1>Le home de casual person.</h1>
-        <p><a href="student/home">Le home de student!</a></p>
-        <p><a href="customer/home">Le home de customer!</a></p>
-
+        <h1>Welcome!</h1>
+        <p>Are you a <a href=<c:url value="/user/home" />>user</a> or an <a href=<c:url value="/admin/home" />>admin</a>?</p>
     </body>
 </html>

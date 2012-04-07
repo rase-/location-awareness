@@ -2,6 +2,7 @@ package wad.spring.domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Queue;
 import javax.persistence.*;
 
 @Entity(name = "USERS")
@@ -16,7 +17,15 @@ public class User implements Serializable {
     private String password;
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Role> roles;
-
+    @ManyToOne
+    private List<User> pendingFriendRequests;
+    
+    @OneToMany
+    private List<User> friends;
+    
+    @ManyToMany
+    private Queue<Place> history;
+    
     public Long getId() {
         return id;
     }
@@ -56,4 +65,29 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public List<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<User> friends) {
+        this.friends = friends;
+    }
+
+    public List<User> getPendingFriendRequests() {
+        return pendingFriendRequests;
+    }
+
+    public void setPendingFriendRequests(List<User> pendingFriendRequests) {
+        this.pendingFriendRequests = pendingFriendRequests;
+    }
+
+    public Queue<Place> getHistory() {
+        return history;
+    }
+
+    public void setHistory(Queue<Place> history) {
+        this.history = history;
+    }
+    
 }
