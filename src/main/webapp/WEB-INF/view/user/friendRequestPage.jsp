@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -6,7 +7,12 @@
         <title>User friend request page</title>
     </head>
     <body>
-        <h1>Friend Requests</h1>
+        <h1>Friend requests sent to you by</h1>
+        <p>
+        <c:forEach var="request" items="${pendingRequests}">
+            username: ${request.username}, name: ${request.name} <br />
+        </c:forEach>
+        </p>
         <h1>Send friend requests</h1>
     </body>
 </html>

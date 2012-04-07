@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.spring.domain.User;
@@ -38,7 +39,8 @@ public class UserController {
     }
     
     @RequestMapping("/history")
-    public String showHistory() {
+    public String showHistory(Model model, Principal principal) {
+        model.addAttribute("history", userService.findByUsername(principal.getName()).getHistory());
         return "user/history";
     }
     
@@ -47,5 +49,11 @@ public class UserController {
         model.addAttribute("pendingRequests", userService.findByUsername(principal.getName()).getPendingFriendRequests());
         //Add unadded firends to model - means to make such a method to service
         return "friendRequestPage";
+    }
+    
+    @RequestMapping(value = "/friendRequests/{userId}", method = RequestMethod.GET)
+    public String processFriendRequest(@PathVariable Long userId, Principal principal) {
+        userService.sendOrAcceptFriendRequestByNameToById(principal.getName(), userId);
+        return "redirect:/user/friendRequests";
     }
 }

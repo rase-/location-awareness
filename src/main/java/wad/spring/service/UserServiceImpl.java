@@ -17,9 +17,10 @@ import wad.spring.repository.UserRepository;
  */
 @Service
 public class UserServiceImpl implements UserService {
+
     @Autowired
     UserRepository userRepository;
-    
+
     @Override
     @Transactional(readOnly = true)
     public User findByUsername(String username) {
@@ -37,5 +38,28 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
         userRepository.save(user);
     }
-    
+
+    @Override
+    public void sendOrAcceptFriendRequestByNameToById(String username, Long id) {
+        User addingUser = userRepository.findByUsername(username);
+        User addedUser = userRepository.findOne(id);
+        if (addedUser.getPendingFriendRequests().contains(addingUser)) {
+            addedUser.getPendingFriendRequests().add(addingUser);
+        } 
+        
+        if (addingUser.getPendingFriendRequests().contains(addedUser)) {
+            addedUser.getPendingFriendRequests().remove(addingUser);
+            addingUser.getPendingFriendRequests().remove(addedUser);
+            addedUser.getFriends().add(addingUser);
+            addingUser.getFriends().add(addedUser);
+        }
+        
+        userRepository.save(addedUser);
+        userRepository.save(addingUser);
+    }
+
+    @Override
+    public User findOny(Long id) {
+        return userRepository.findOne(id);
+    }
 }

@@ -13,6 +13,8 @@ import wad.spring.domain.User;
  */
 public interface UserService {
     User findByUsername(String username);
+    User findOny(Long id);
     List<User> findAll();
     void save(User user);
+    void sendOrAcceptFriendRequestByNameToById(String username, Long id);
 }

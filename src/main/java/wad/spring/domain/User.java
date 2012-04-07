@@ -26,6 +26,25 @@ public class User implements Serializable {
     @ManyToMany
     private Queue<Place> history;
     
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof User) {
+            User u = (User) o;
+            if (this.id == u.getId()) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 41 * hash + (this.id != null ? this.id.hashCode() : 0);
+        return hash;
+    }
+    
     public Long getId() {
         return id;
     }
