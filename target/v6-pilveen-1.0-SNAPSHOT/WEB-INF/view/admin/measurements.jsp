@@ -16,7 +16,7 @@
         </form:form>
         <h2>Measurements</h2>
         <c:forEach var="measurement" items="${place.measurements}">
-            <p><a href=<c:url value="/admin/places/${place.id}/measurements/${measurement.id}" />>${measurement.timestamp}</a></p>
+            <p><a href=<c:url value="/admin/places/${place.id}/measurements/${measurement.id}" />>${measurement.measureTime}</a></p>
         </c:forEach>
     </body>
 </html>

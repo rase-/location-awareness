@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wad.spring.domain.Measurement;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
+import wad.spring.service.MeasurementService;
 import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
 
@@ -33,6 +34,9 @@ public class AdminController {
     
     @Autowired
     PlaceService placeService;
+    
+    @Autowired
+    MeasurementService measurementService;
     
     @RequestMapping("/*")
     public String adminHome(Principal principal, Model model) {
@@ -94,6 +98,19 @@ public class AdminController {
             return "admin/mesurements";
         }
         placeService.addMeasurement(placeId, form);
+        return "redirect:/admin/places/" + placeId + "/measurements";
+    }
+    
+    @RequestMapping(value = "places/{placeId}/measurements/{measurementId}", method = RequestMethod.GET)
+    public String showMeasurementInfo(@PathVariable Long placeId, @PathVariable Long measurementId, Model model) {
+        model.addAttribute("measurement", measurementService.findOne(measurementId));
+        model.addAttribute("place", placeService.findOne(placeId));
+        return "admin/measurement";
+    }
+    
+    @RequestMapping(value = "places/{placeId}/measurements/{measurementId}")
+    public String deleteMeasurement(@PathVariable Long placeId, @PathVariable Long measurementId) {
+        measurementService.deleteById(placeId, measurementId);
         return "redirect:/admin/places/" + placeId + "/measurements";
     }
 }

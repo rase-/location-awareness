@@ -11,6 +11,7 @@ import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import wad.spring.domain.Fingerprint;
 import wad.spring.domain.Measurement;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
@@ -56,20 +57,21 @@ public class PlaceServiceImpl implements PlaceService {
     }
 
     @Override
+    @Transactional
     public void addMeasurement(Long id, MeasurementForm measurementform) {
         Place place = placeRepository.findOne(id);
         Measurement measurement = new Measurement();
         measurement.setMeasureTime(new Date());
-        ArrayList<String> macAdresses = new ArrayList<String>();
-        ArrayList<Integer> RSS = new ArrayList<Integer>();
+        ArrayList<Fingerprint> fingerprints = new ArrayList<Fingerprint>();
         String input = measurementform.getMeasurements();
         Scanner scanner = new Scanner(input);
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
             String[] individual = line.split(" ");
-            macAdresses.add(individual[0]);
-            RSS.add(Integer.parseInt(individual[1]));
+            fingerprints.add(new Fingerprint(individual[0], Integer.parseInt(individual[1])));
         }
+        measurement.setFingerprints(fingerprints);
+        place.getMeasurements().add(measurement);
     }
     
 }
