@@ -4,36 +4,56 @@
  */
 package wad.spring.domain;
 
+import java.util.Date;
+import java.util.List;
+import javax.persistence.*;
+
 /**
  *
  * @author tonykovanen
  */
+
+@Entity
 public class Measurement {
-    private String macAddress;
-    private int receivedSignalStrength;
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
+    private Long id;
+    private List<String> macAddress;
+    private List<Integer> receivedSignalStrength;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date measureTime;
 
-    public Measurement(String macAddress, int receivedSignalStrength) {
-        this.macAddress = macAddress;
-        this.receivedSignalStrength = receivedSignalStrength;
+    public Long getId() {
+        return id;
     }
 
-    public Measurement() {
-    }
-
-    public String getMacAddress() {
+    public List<String> getMacAddress() {
         return macAddress;
     }
 
-    public int getReceivedSignalStrength() {
+    public Date getMeasureTime() {
+        return measureTime;
+    }
+
+    public List<Integer> getReceivedSignalStrength() {
         return receivedSignalStrength;
     }
 
-    public void setMacAddress(String macAddress) {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setMacAddress(List<String> macAddress) {
         this.macAddress = macAddress;
     }
 
-    public void setReceivedSignalStrength(int receivedSignalStrength) {
+    public void setMeasureTime(Date measureTime) {
+        this.measureTime = measureTime;
+    }
+
+    public void setReceivedSignalStrength(List<Integer> receivedSignalStrength) {
         this.receivedSignalStrength = receivedSignalStrength;
     }
+
     
 }

@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,9 +8,13 @@
         <title>Places</title>
     </head>
     <body>
+        <h1>Add a new place</h1>
+        <form:form commandName="place" action="${pageContext.request.contextPath}/admin/places" method = "POST">
+            Name of the place: <form:input path="name" /><form:errors path="name" />
+        </form:form>
         <h1>Places</h1>
         <c:forEach var="place" items="${places}">
-            <p>${place.name}</p>
+            <p><a href=<c:url value="/admin/places/${place.id}" />>${place.name}</a></p>
         </c:forEach>
     </body>
 </html>

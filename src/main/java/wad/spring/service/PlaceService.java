@@ -5,6 +5,7 @@
 package wad.spring.service;
 
 import java.util.List;
+import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
 
 /**
@@ -16,4 +17,6 @@ public interface PlaceService {
     List<Place> findAll();
     Place findOne(Long id);
     Place findByName(String name);
+    void deleteById(Long id);
+    void addMeasurement(Long id, MeasurementForm measurementform);
 }

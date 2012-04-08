@@ -45,7 +45,7 @@ public class UserController {
     }
     
     @RequestMapping(value = "/friendRequests", method = RequestMethod.GET)
-    public String showUnaddedFriends(Principal principal, Model model) {
+    public String showUnaddedUsers(Principal principal, Model model) {
         model.addAttribute("unadded", userService.getUnaddedAndNotSelf(principal.getName()));
         return "user/friendRequestPage";
     }

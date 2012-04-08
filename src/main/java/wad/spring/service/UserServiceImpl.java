@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import wad.spring.domain.Role;
 import wad.spring.domain.User;
 import wad.spring.repository.UserRepository;
 
@@ -69,11 +70,14 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username);
         List<User> friends = user.getFriends();
         ArrayList<User> unadded = new ArrayList<User>();
+        Role role = new Role();
+        role.setRolename("user");
         for (User u : userRepository.findAll()) {
-            if (!u.equals(user) && !friends.contains(u)) {
+            if (!friends.contains(u) && u.getRoles().contains(role)) {
                 unadded.add(u);
             }
         }
+        unadded.remove(user);
         return unadded;
     }
 }

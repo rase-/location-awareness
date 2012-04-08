@@ -8,6 +8,7 @@
     </head>
     <body>
         <h1>Welcome ${user.name}</h1>
+        <p><a href=<c:url value="/admin/places"/>>Manage places</a></p>
         <p><a href=<c:url value="/j_spring_security_logout"/>>logout</a></p>
     </body>
 </html>

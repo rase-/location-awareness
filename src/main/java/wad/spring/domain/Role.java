@@ -14,6 +14,25 @@ public class Role implements Serializable {
     @ManyToMany(mappedBy = "roles")
     private List<User> users;
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Role) {
+            Role role = (Role) o;
+            if (role.getRolename().equals(this.rolename)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + (this.rolename != null ? this.rolename.hashCode() : 0);
+        return hash;
+    }
+
     public Long getId() {
         return id;
     }

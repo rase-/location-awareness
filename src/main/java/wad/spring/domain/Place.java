@@ -6,8 +6,7 @@ package wad.spring.domain;
 
 import java.io.Serializable;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  *
@@ -16,8 +15,11 @@ import javax.persistence.Id;
 @Entity
 public class Place implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+    @Column(unique = true)
     private String name;
+    @OneToMany
     private List<Measurement> measurements;
 
     public Long getId() {
