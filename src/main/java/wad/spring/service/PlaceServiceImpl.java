@@ -75,18 +75,16 @@ public class PlaceServiceImpl implements PlaceService {
             String[] individual = line.split(" ");
             fingerprints.add(new Fingerprint(individual[0], Integer.parseInt(individual[1])));
         }
-        measurement.setFingerprints(fingerprints);
+        measurement.setFingerprints(makeHyperbolic(fingerprints));
         place.getMeasurements().add(measurement);
     }
     private ArrayList<Fingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
         ArrayList<Fingerprint> hyperbolic = new ArrayList<Fingerprint>();
-        for(int i = 0; i < regular.size(); i++) {
-            for(int j = i + 1; j < regular.size(); j++) {
+        for(int i = 1; i < regular.size(); i++) {
+            for(int j = 0; j < i; j++) {
                 hyperbolic.add(new Fingerprint(regular.get(i).getMacAddress() + " " + regular.get(j).getMacAddress(), regular.get(i).getSignalStrength() / regular.get(j).getSignalStrength()));
             }
-            for(int j = i - 1; j >= 0; j--) {
-                hyperbolic.add(new Fingerprint(regular.get(i).getMacAddress() + " " + regular.get(j).getMacAddress(), regular.get(i).getSignalStrength() / regular.get(j).getSignalStrength()));
-            }
+            
         }
         return hyperbolic;
     }
