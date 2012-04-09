@@ -11,7 +11,7 @@
         <h1>Measurement on ${measurement.measureTime}</h1>
         <h2>Measurement details</h2>
         <c:forEach var="fingerprint" items="${measurement.fingerprints}">
-            ${fingerprint.macAddress} ${fingerprint.signalStrength} <br />
+            ${fingerprint.firstMacAddress} - ${fingerprint.secondMacAddress} : ${fingerprint.logarithmicRatio} <br />
         </c:forEach>
         <form:form commandName="delete" action="${pageContext.request.contextPath}/admin/places/${place.id}/measurements/${measurement.id}" method="DELETE">
             <input type="submit" value="Delete" />

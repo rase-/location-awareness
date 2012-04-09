@@ -18,7 +18,7 @@ public class Measurement {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    private List<Fingerprint> fingerprints;
+    private List<HyperbolicFingerprint> fingerprints;
     @Temporal(TemporalType.TIMESTAMP)
     private Date measureTime;
     @ManyToOne
@@ -39,11 +39,11 @@ public class Measurement {
         return id;
     }
 
-    public List<Fingerprint> getFingerprints() {
+    public List<HyperbolicFingerprint> getFingerprints() {
         return this.fingerprints;
     }
     
-    public void setFingerprints(List<Fingerprint> fingerprints) {
+    public void setFingerprints(List<HyperbolicFingerprint> fingerprints) {
         this.fingerprints = fingerprints;
     }
 

@@ -11,10 +11,7 @@ import java.util.Scanner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import wad.spring.domain.Fingerprint;
-import wad.spring.domain.Measurement;
-import wad.spring.domain.MeasurementForm;
-import wad.spring.domain.Place;
+import wad.spring.domain.*;
 import wad.spring.repository.MeasurementRepository;
 import wad.spring.repository.PlaceRepository;
 
@@ -78,11 +75,11 @@ public class PlaceServiceImpl implements PlaceService {
         measurement.setFingerprints(makeHyperbolic(fingerprints));
         place.getMeasurements().add(measurement);
     }
-    private ArrayList<Fingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
-        ArrayList<Fingerprint> hyperbolic = new ArrayList<Fingerprint>();
+    private ArrayList<HyperbolicFingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
+        ArrayList<HyperbolicFingerprint> hyperbolic = new ArrayList<HyperbolicFingerprint>();
         for(int i = 1; i < regular.size(); i++) {
             for(int j = 0; j < i; j++) {
-                hyperbolic.add(new Fingerprint(regular.get(i).getMacAddress() + " " + regular.get(j).getMacAddress(), regular.get(i).getSignalStrength() / regular.get(j).getSignalStrength()));
+                hyperbolic.add(new HyperbolicFingerprint(regular.get(i), regular.get(j)));
             }
             
         }
