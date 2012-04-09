@@ -12,9 +12,9 @@ import java.io.Serializable;
  */
 public class Fingerprint implements Serializable {
     private String macAddress;
-    private int signalStrength;
+    private double signalStrength;
     
-    public Fingerprint(String macad, int rss) {
+    public Fingerprint(String macad, double rss) {
         this.macAddress = macad;
         this.signalStrength = rss;
     }
@@ -23,7 +23,7 @@ public class Fingerprint implements Serializable {
         return macAddress;
     }
 
-    public int getSignalStrength() {
+    public double getSignalStrength() {
         return signalStrength;
     }
 
@@ -31,7 +31,7 @@ public class Fingerprint implements Serializable {
         this.macAddress = macAddress;
     }
 
-    public void setSignalStrength(int signalStrength) {
+    public void setSignalStrength(double signalStrength) {
         this.signalStrength = signalStrength;
     }
     

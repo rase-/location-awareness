@@ -15,6 +15,7 @@ import wad.spring.domain.Fingerprint;
 import wad.spring.domain.Measurement;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
+import wad.spring.repository.MeasurementRepository;
 import wad.spring.repository.PlaceRepository;
 
 /**
@@ -25,6 +26,9 @@ import wad.spring.repository.PlaceRepository;
 public class PlaceServiceImpl implements PlaceService {
     @Autowired
     PlaceRepository placeRepository;
+    
+    @Autowired
+    MeasurementRepository measurementRepository;
     
     @Override
     @Transactional
@@ -54,6 +58,7 @@ public class PlaceServiceImpl implements PlaceService {
     @Transactional
     public void deleteById(Long id) {
         placeRepository.delete(id);
+        
     }
 
     @Override
@@ -72,6 +77,18 @@ public class PlaceServiceImpl implements PlaceService {
         }
         measurement.setFingerprints(fingerprints);
         place.getMeasurements().add(measurement);
+    }
+    private ArrayList<Fingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
+        ArrayList<Fingerprint> hyperbolic = new ArrayList<Fingerprint>();
+        for(int i = 0; i < regular.size(); i++) {
+            for(int j = i + 1; j < regular.size(); j++) {
+                hyperbolic.add(new Fingerprint(regular.get(i).getMacAddress() + " " + regular.get(j).getMacAddress(), regular.get(i).getSignalStrength() / regular.get(j).getSignalStrength()));
+            }
+            for(int j = i - 1; j >= 0; j--) {
+                hyperbolic.add(new Fingerprint(regular.get(i).getMacAddress() + " " + regular.get(j).getMacAddress(), regular.get(i).getSignalStrength() / regular.get(j).getSignalStrength()));
+            }
+        }
+        return hyperbolic;
     }
     
 }

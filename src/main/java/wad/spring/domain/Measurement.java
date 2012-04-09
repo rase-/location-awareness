@@ -21,6 +21,8 @@ public class Measurement {
     private List<Fingerprint> fingerprints;
     @Temporal(TemporalType.TIMESTAMP)
     private Date measureTime;
+    @ManyToOne
+    private Place place;
 
     public boolean equals(Object o) {
         if (o instanceof Measurement) {
@@ -58,7 +60,13 @@ public class Measurement {
         this.measureTime = measureTime;
     }
 
-    
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
 
     
 }

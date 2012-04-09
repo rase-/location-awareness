@@ -19,7 +19,7 @@ public class Place implements Serializable {
     private Long id;
     @Column(unique = true)
     private String name;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL)
     private List<Measurement> measurements;
 
     public Long getId() {
