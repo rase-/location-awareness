@@ -18,4 +18,5 @@ public interface UserService {
     void save(User user);
     void sendOrAcceptFriendRequestByNameToById(String username, Long id);
     List<User> getUnaddedAndNotSelf(String username);
+    void localize(String username);
 }

@@ -80,4 +80,11 @@ public class UserServiceImpl implements UserService {
         unadded.remove(user);
         return unadded;
     }
+
+    @Override
+    @Transactional
+    public void localize(String username) {
+        User user = userRepository.findByUsername(username);
+        //do bunch of stuff
+    }
 }
