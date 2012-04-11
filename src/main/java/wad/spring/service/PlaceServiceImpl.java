@@ -64,15 +64,7 @@ public class PlaceServiceImpl implements PlaceService {
         Place place = placeRepository.findOne(id);
         Measurement measurement = new Measurement();
         measurement.setMeasureTime(new Date());
-        ArrayList<Fingerprint> fingerprints = new ArrayList<Fingerprint>();
-        String input = measurementform.getMeasurements();
-        Scanner scanner = new Scanner(input);
-        while (scanner.hasNextLine()) {
-            String line = scanner.nextLine();
-            String[] individual = line.split(" ");
-            fingerprints.add(new Fingerprint(individual[0], Integer.parseInt(individual[1])));
-        }
-        measurement.setFingerprints(makeHyperbolic(fingerprints));
+        measurement.setFingerprints(makeHyperbolic(measurementform.makeFingerprints()));
         place.getMeasurements().add(measurement);
     }
     private ArrayList<HyperbolicFingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {

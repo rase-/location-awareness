@@ -56,7 +56,7 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/history";
         }
-        userService.localize(principal.getName());
+        userService.localize(principal.getName(), measurementform);
         return "redirect:/user/history";
     }
 

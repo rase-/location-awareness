@@ -1,17 +1,20 @@
 package wad.spring.service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import wad.spring.domain.Role;
-import wad.spring.domain.User;
+import wad.spring.domain.*;
+import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
 
 @Service
 public class SecureServiceImpl implements SecureService {
-
+    @Autowired
+    private PlaceRepository placeRepository;
+    
     @Autowired
     private UserRepository userRepository;
 
@@ -78,5 +81,6 @@ public class SecureServiceImpl implements SecureService {
         roles.add(role);
         
         tony.setRoles(roles);
+        
     }
 }

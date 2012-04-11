@@ -5,12 +5,13 @@
 package wad.spring.service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import wad.spring.domain.Role;
-import wad.spring.domain.User;
+import wad.spring.domain.*;
+import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
 
 /**
@@ -19,7 +20,9 @@ import wad.spring.repository.UserRepository;
  */
 @Service
 public class UserServiceImpl implements UserService {
-
+    @Autowired
+    PlaceRepository placeRepository;
+    
     @Autowired
     UserRepository userRepository;
 
@@ -83,8 +86,63 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void localize(String username) {
+    public void localize(String username, MeasurementForm measurementform) {
         User user = userRepository.findByUsername(username);
-        //do bunch of stuff
+        ArrayList<Fingerprint> userPrints = measurementform.makeFingerprints();
+        List<Place> places = placeRepository.findAll();
+        double smallestError = Double.MAX_VALUE;
+        Place leastErraneousPlace = places.get(0);
+        for (Place p : places) {
+            List<Measurement> measurements = p.getMeasurements();
+            double placeErrors = 0;
+            // We want to match user fingerprints for each hyperbolic measurement in each place
+            // We then want to calculate the euclidean distance between these two
+            for (Measurement m : measurements) {
+                List<HyperbolicFingerprint> userHyperbolicPrints = makeHyperbolic(userPrints, m.getFingerprints());
+                placeErrors += (euclideanDistance(userHyperbolicPrints, m.getFingerprints()));
+            }
+            // We take the average of all the errors for that one place and see if it is the lowest
+            placeErrors = placeErrors / (measurements.size());
+            if (placeErrors < smallestError) {
+                smallestError = placeErrors;
+                leastErraneousPlace = p;
+            }
+        }
+        
+        while (user.getHistory().size() >= 10) user.getHistory().remove(user.getHistory().size() - 1);
+        user.getHistory().add(leastErraneousPlace);
+        userRepository.save(user);
+    }
+    
+    private double euclideanDistance(List<HyperbolicFingerprint> userPrints, List<HyperbolicFingerprint> reference) {
+        double sum = 0;
+        for (int i = 0; i < userPrints.size(); i++) {
+            sum += Math.pow(userPrints.get(i).getLogarithmicRatio() - reference.get(i).getLogarithmicRatio(), 2);
+        }
+        return Math.sqrt(sum);
+    }
+    
+    private List<HyperbolicFingerprint> makeHyperbolic(List<Fingerprint> userPrints, List<HyperbolicFingerprint> measurementPrints) {
+        ArrayList<HyperbolicFingerprint> userHyperbolicPrints = new ArrayList<HyperbolicFingerprint>();
+        HashMap<String, Double> userPrintsMap = new HashMap<String, Double>();
+        for (Fingerprint print : userPrints) {
+            userPrintsMap.put(print.getMacAddress(), print.getSignalStrength());
+        }
+        for (HyperbolicFingerprint print : measurementPrints) {
+            Double firstSignalStrength = userPrintsMap.get(print.getFirstMacAddress());
+            Double secondSignalStrength = userPrintsMap.get(print.getSecondMacAddress());
+            // If a mac addres is not present in the user measurement
+            // We want to insert a low signal strength in it's place
+            if (firstSignalStrength == null) {
+                firstSignalStrength = Double.valueOf(-100);
+            }
+            if (secondSignalStrength == null) {
+                secondSignalStrength = Double.valueOf(-100);
+            }
+            Fingerprint firstPrint = new Fingerprint(print.getFirstMacAddress(), firstSignalStrength);
+            Fingerprint secondPrint = new Fingerprint(print.getSecondMacAddress(), secondSignalStrength);
+            userHyperbolicPrints.add(new HyperbolicFingerprint(firstPrint, secondPrint));
+        }
+        return userHyperbolicPrints;
     }
 }

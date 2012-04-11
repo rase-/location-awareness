@@ -21,7 +21,7 @@ public class User implements Serializable {
     @OneToMany
     private List<User> friends;
     
-    @ManyToMany
+    @OneToMany
     private List<Place> history;
     
     @Override
