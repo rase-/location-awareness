@@ -22,6 +22,9 @@ public class User implements Serializable {
     private List<User> friends;
     
     @OneToMany(cascade = CascadeType.ALL)
+    private List<FriendshipRequest> receivedFriendRequests;
+    
+    @OneToMany(cascade = CascadeType.ALL)
     private List<HistoryOccurrence> history;
     
     @Override
@@ -97,6 +100,14 @@ public class User implements Serializable {
 
     public void setHistory(List<HistoryOccurrence> history) {
         this.history = history;
+    }
+
+    public List<FriendshipRequest> getReceivedFriendRequests() {
+        return receivedFriendRequests;
+    }
+
+    public void setReceivedFriendRequests(List<FriendshipRequest> receivedFriendRequests) {
+        this.receivedFriendRequests = receivedFriendRequests;
     }
     
 }

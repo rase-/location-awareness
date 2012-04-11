@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wad.spring.domain.*;
+import wad.spring.repository.FriendshipRequestRepository;
 import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
 
@@ -26,6 +27,9 @@ public class UserServiceImpl implements UserService {
     
     @Autowired
     UserRepository userRepository;
+    
+    @Autowired
+    FriendshipRequestRepository friendshipRequestRepository;
 
     @Override
     @Transactional(readOnly = true)
@@ -51,13 +55,35 @@ public class UserServiceImpl implements UserService {
         User addingUser = userRepository.findByUsername(username);
         User addedUser = userRepository.findOne(id);
 
-        if (!addingUser.getFriends().contains(addedUser)) {
-            addingUser.getFriends().add(addedUser);
+//        if (!addingUser.getFriends().contains(addedUser)) {
+//            addingUser.getFriends().add(addedUser);
+//        }
+//        if (!addedUser.getFriends().contains(addingUser)) {
+//            addedUser.getFriends().add(addingUser);
+//        }
+        
+        for (FriendshipRequest f : addingUser.getReceivedFriendRequests()) {
+            if (f.getSender().equals(addedUser)) {
+                addingUser.getReceivedFriendRequests().remove(f);
+                friendshipRequestRepository.delete(f);
+                addingUser.getFriends().add(addedUser);
+                addedUser.getFriends().add(addingUser);
+                userRepository.save(addedUser);
+                userRepository.save(addingUser);
+                return;
+            }
         }
-        if (!addedUser.getFriends().contains(addingUser)) {
-            addedUser.getFriends().add(addingUser);
+        
+        for (FriendshipRequest f : addedUser.getReceivedFriendRequests()) {
+            if (f.getSender().equals(addingUser)) {
+                return;
+            }
         }
-
+        
+        FriendshipRequest request = new FriendshipRequest();
+        request.setSender(addingUser);
+        addedUser.getReceivedFriendRequests().add(request);
+        
         userRepository.save(addedUser);
         userRepository.save(addingUser);
     }
@@ -148,5 +174,10 @@ public class UserServiceImpl implements UserService {
             userHyperbolicPrints.add(new HyperbolicFingerprint(firstPrint, secondPrint));
         }
         return userHyperbolicPrints;
+    }
+
+    @Override
+    public List<FriendshipRequest> getFriendshipRequests(String username) {
+        return userRepository.findByUsername(username).getReceivedFriendRequests();
     }
 }

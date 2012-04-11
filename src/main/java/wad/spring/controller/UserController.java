@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,6 +61,26 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/history";
         }
+        
+        String[] lines = measurementform.getMeasurements().split("\n");
+        
+        for (String line : lines) {
+            String[] parts = line.split(" ");
+            if (!parts[0].matches("[a-zA-Z0-9:-]+")) {
+                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
+                return "user/history";
+            }
+            if (!parts[1].matches("[-+]?[0-9]*\\.?[0-9]+")) {
+                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
+                return "user/history";
+            }
+            //There should not be a third element on one line
+            if (!line.matches("\\w \\w")) {
+                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
+                return "user/history";
+            }
+        }
+        
         userService.localize(principal.getName(), measurementform);
         return "redirect:/user/history";
     }
@@ -67,6 +88,7 @@ public class UserController {
     @RequestMapping(value = "/friendRequests", method = RequestMethod.GET)
     public String showUnaddedUsers(Principal principal, Model model) {
         model.addAttribute("unadded", userService.getUnaddedAndNotSelf(principal.getName()));
+        model.addAttribute("friendshipRequests", userService.getFriendshipRequests(principal.getName()));
         return "user/friendRequestPage";
     }
 

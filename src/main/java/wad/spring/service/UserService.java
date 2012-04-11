@@ -5,6 +5,7 @@
 package wad.spring.service;
 
 import java.util.List;
+import wad.spring.domain.FriendshipRequest;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.User;
 
@@ -20,4 +21,5 @@ public interface UserService {
     void sendOrAcceptFriendRequestByNameToById(String username, Long id);
     List<User> getUnaddedAndNotSelf(String username);
     void localize(String username, MeasurementForm measurementform);
+    List<FriendshipRequest> getFriendshipRequests(String username);
 }
