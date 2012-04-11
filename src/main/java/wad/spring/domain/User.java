@@ -21,8 +21,8 @@ public class User implements Serializable {
     @OneToMany
     private List<User> friends;
     
-    @OneToMany
-    private List<Place> history;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<HistoryOccurrence> history;
     
     @Override
     public boolean equals(Object o) {
@@ -91,11 +91,11 @@ public class User implements Serializable {
         this.friends = friends;
     }
 
-    public List<Place> getHistory() {
+    public List<HistoryOccurrence> getHistory() {
         return history;
     }
 
-    public void setHistory(List<Place> history) {
+    public void setHistory(List<HistoryOccurrence> history) {
         this.history = history;
     }
     

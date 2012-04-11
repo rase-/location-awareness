@@ -5,6 +5,7 @@
 package wad.spring.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,8 +110,11 @@ public class UserServiceImpl implements UserService {
             }
         }
         
-        while (user.getHistory().size() >= 10) user.getHistory().remove(user.getHistory().size() - 1);
-        user.getHistory().add(leastErraneousPlace);
+        while (user.getHistory().size() >= 10) user.getHistory().remove(0);
+        HistoryOccurrence occurrence = new HistoryOccurrence();
+        occurrence.setPlace(leastErraneousPlace);
+        occurrence.setMeasureTime(new Date());
+        user.getHistory().add(occurrence);
         userRepository.save(user);
     }
     

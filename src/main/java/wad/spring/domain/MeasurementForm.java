@@ -6,12 +6,14 @@ package wad.spring.domain;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.validation.constraints.Pattern;
 
 /**
  *
  * @author tonykovanen
  */
 public class MeasurementForm {
+    //@Pattern(regexp="^([a-zA-Z0-9:-]+)(\\w)([-+]?[0-9]*\\.?[0-9]+$)", message="The measurement should consist of mac address signal strength pairs written: address <space> rss<linebreak>address <space> rss<linebreak> etc")
     private String measurements;
 
     public String getMeasurements() {

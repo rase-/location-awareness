@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
 import wad.spring.domain.User;
+import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
 
 /**
@@ -29,7 +30,10 @@ import wad.spring.service.UserService;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    private PlaceService placeService;
+    
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/*")
     public String userHome(Principal principal, Model model) {
@@ -70,5 +74,11 @@ public class UserController {
     public String processFriendRequest(@PathVariable Long userId, Principal principal) {
         userService.sendOrAcceptFriendRequestByNameToById(principal.getName(), userId);
         return "redirect:/user/friends";
+    }
+    
+    @RequestMapping(value = "/places/{placeId}")
+    public String showPlaceInformation(@PathVariable Long placeId, Model model) {
+        model.addAttribute(placeService.findOne(placeId));
+        return "user/place";
     }
 }

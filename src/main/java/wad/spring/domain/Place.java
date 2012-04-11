@@ -7,6 +7,7 @@ package wad.spring.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 /**
  *
@@ -18,7 +19,11 @@ public class Place implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     @Column(unique = true)
+    @Pattern(regexp="^[a-zA-Z0-9äöüÄÖÜ'-]*$", message="The name should only contains characters a-z, A-Z, 0-9, äöüÄÖÜ'-")
     private String name;
+    @Pattern(regexp="^[^<>%$]*$", message="The description should not contain <, >, % or $ characters")
+    private String description;
+    
     @OneToMany(mappedBy = "place", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Measurement> measurements;
 
@@ -45,5 +50,15 @@ public class Place implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+   
     
 }

@@ -15,8 +15,8 @@
             <input type="submit" />
         </form:form>
         <h2>Last 10 locations</h2>
-        <c:forEach var="place" items="${history}">
-            <p><a href=<c:url value="/user/places/${place.id}" />>${place.name}</a></p>
+        <c:forEach var="history" items="${history}">
+            <p>${history.measureTime} near <a href=<c:url value="/user/places/${history.place.id}" />>${history.place.name}</a></p>
         </c:forEach>
     </body>
 </html>

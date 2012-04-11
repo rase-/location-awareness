@@ -71,10 +71,11 @@ public class AdminController {
     @RequestMapping(value = "places/{placeId}", method = RequestMethod.POST)
     public String editPlaceInformation(@Valid @ModelAttribute Place edit, BindingResult result, @PathVariable Long placeId) {
         if (result.hasErrors()) {
-            return "admin/place";
+            return "admin/places";
         }
         Place nonEdited = placeService.findOne(placeId);
         nonEdited.setName(edit.getName());
+        nonEdited.setDescription(edit.getDescription());
         placeService.save(nonEdited);
         return "redirect:/admin/places";
     }
