@@ -177,7 +177,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<FriendshipRequest> getFriendshipRequests(String username) {
         return userRepository.findByUsername(username).getReceivedFriendRequests();
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public User findIfFriends(String username, Long friendsId) {
+        User user = userRepository.findByUsername(username);
+        User possibleFriend = userRepository.findOne(friendsId);
+        if (user.getFriends().contains(possibleFriend)) {
+            return possibleFriend;
+        }
+        return null;
     }
 }

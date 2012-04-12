@@ -11,12 +11,12 @@
         <h1>${place.name}</h1>
         <p><a href=<c:url value="/admin/places/${place.id}/measurements" />>Manage measurements</a></p>
         <h1>Change place information</h1>
-        <form:form commandName="edit" action="${pageContext.request.contextPath}/admin/places/${place.id}" method="POST">
+        <form:form commandName="edit" action="${pageContext.request.contextPath}/admin/places/${id}" method="POST">
             <form:input path="name" value="${place.name}" /><form:errors path="name" /> <br />
             <textarea name="description" id="description"/>${place.description}</textarea><form:errors path="description" /> <br />
             <input type="submit" />
         </form:form>
-        <form:form commandName="delete" action="${pageContext.request.contextPath}/admin/places/${place.id}" method="DELETE">
+        <form:form commandName="delete" action="${pageContext.request.contextPath}/admin/places/${id}" method="DELETE">
             <input type="submit" value="Delete" />
         </form:form>
     </body>

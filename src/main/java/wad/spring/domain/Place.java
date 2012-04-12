@@ -24,7 +24,7 @@ public class Place implements Serializable {
     @Pattern(regexp="^[^<>%$]*$", message="The description should not contain <, >, % or $ characters")
     private String description;
     
-    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL)
     private List<Measurement> measurements;
 
     public Long getId() {

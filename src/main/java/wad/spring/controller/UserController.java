@@ -77,10 +77,7 @@ public class UserController {
                 result.addError(new FieldError("measurementform", "measurements", "Second part of each line should be an integer with a negative sign or without a sign."));
                 return "user/history";
             }
-            if (parts.length > 2) {
-                result.addError(new FieldError("measurementform", "measurements", "Each line should contain exactly two arguments"));
-                return "user/history"; 
-            }
+            
             
         }
 
@@ -103,7 +100,23 @@ public class UserController {
 
     @RequestMapping(value = "/places/{placeId}")
     public String showPlaceInformation(@PathVariable Long placeId, Model model) {
-        model.addAttribute(placeService.findOne(placeId));
+        Place place = placeService.findOne(placeId);
+        if (place == null) {
+            model.addAttribute("message", "A place of requested id does not exist");
+            return "troubleshooting";
+        }
+        model.addAttribute("place", place);
         return "user/place";
+    }
+    
+    @RequestMapping(value= "/friends/{userId}", method = RequestMethod.GET)
+    public String showFriendInformation(@PathVariable Long userId, Principal principal, Model model) {
+        User friend = userService.findIfFriends(principal.getName(), userId);
+        if (friend == null) {
+            model.addAttribute("message", "The user of this id does not exist or is not your friend");
+            return "troubleshooting";
+        }
+        model.addAttribute("friend", friend);
+        return "user/friend";
     }
 }

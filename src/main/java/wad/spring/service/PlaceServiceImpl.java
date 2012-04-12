@@ -55,7 +55,6 @@ public class PlaceServiceImpl implements PlaceService {
     @Transactional
     public void deleteById(Long id) {
         placeRepository.delete(id);
-        
     }
 
     @Override

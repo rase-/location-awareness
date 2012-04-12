@@ -22,4 +22,5 @@ public interface UserService {
     List<User> getUnaddedAndNotSelf(String username);
     void localize(String username, MeasurementForm measurementform);
     List<FriendshipRequest> getFriendshipRequests(String username);
+    User findIfFriends(String username, Long friendsId);
 }

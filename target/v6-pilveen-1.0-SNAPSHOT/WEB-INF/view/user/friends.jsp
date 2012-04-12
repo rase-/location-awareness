@@ -9,7 +9,7 @@
     <body>
         <h1>Friend list</h1>
         <c:forEach var="friend" items="${friends}">
-            <p>${friend.username}: ${friend.name}</p>
+            <p><a href=<c:url value="/user/friends/${friend.id}" />>${friend.username}: ${friend.name}</a></p>
         </c:forEach>
             <a href=<c:url value="/user/friendRequests" />>Friend request page</a>
     </body>

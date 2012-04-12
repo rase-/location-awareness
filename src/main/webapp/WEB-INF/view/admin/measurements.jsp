@@ -14,6 +14,7 @@
             <form:textarea path="measurements" rows = "5" cols = "30"/><form:errors path="measurements" /> <br />
             <input type="submit" />
         </form:form>
+        <p>For each row you need to input a valid mac address and an integer (if positive without + sign) separated by a space. Only the first to arguments per row are used.</p>
         <h2>Measurements</h2>
         <c:forEach var="measurement" items="${place.measurements}">
             <p><a href=<c:url value="/admin/places/${place.id}/measurements/${measurement.id}" />>${measurement.measureTime}</a></p>
