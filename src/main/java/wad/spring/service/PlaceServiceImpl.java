@@ -65,6 +65,8 @@ public class PlaceServiceImpl implements PlaceService {
         measurement.setMeasureTime(new Date());
         measurement.setFingerprints(makeHyperbolic(measurementform.makeFingerprints()));
         place.getMeasurements().add(measurement);
+        placeRepository.save(place);
+        //measurementRepository.save(measurement);
     }
     private ArrayList<HyperbolicFingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
         ArrayList<HyperbolicFingerprint> hyperbolic = new ArrayList<HyperbolicFingerprint>();

@@ -4,6 +4,7 @@
  */
 package wad.spring.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -14,7 +15,7 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Measurement {
+public class Measurement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
