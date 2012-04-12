@@ -6,11 +6,13 @@ package wad.spring.controller;
 
 import java.security.Principal;
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -94,9 +96,31 @@ public class AdminController {
     }
     
     @RequestMapping(value = "places/{placeId}/measurements", method = RequestMethod.POST)
-    public String addMeasurement(@Valid @ModelAttribute MeasurementForm form, BindingResult result, @PathVariable Long placeId) {
+    public String addMeasurement(@Valid @ModelAttribute("measurementform") MeasurementForm form, BindingResult result, @PathVariable Long placeId) {
         if (result.hasErrors()) {
             return "admin/mesurements";
+        }
+        String lines = form.getMeasurements();
+        Scanner scanner = new Scanner(lines);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            String[] parts = line.split(" ");
+
+            //First part of the line should be a mac address
+            if (!parts[0].matches("[a-zA-Z0-9:-]+")) {
+                result.addError(new FieldError("measurementform", "measurements", "The first part of the measurement should be a valid mac address following separation standards of : and -"));
+                return "admin/measurements";
+            }
+            //Second part of the line should be an integer (double precision not necessary here)
+            if (!parts[1].matches("[-]?[0-9]+")) {
+                result.addError(new FieldError("measurementform", "measurements", "Second part of each line should be an integer with a negative sign or without a sign."));
+                return "admin/measurements";
+            }
+            if (parts.length > 2) {
+                result.addError(new FieldError("measurementform", "measurements", "Each line should contain exactly two arguments"));
+                return "admin/measurements"; 
+            }
+            
         }
         placeService.addMeasurement(placeId, form);
         return "redirect:/admin/places/" + placeId + "/measurements";

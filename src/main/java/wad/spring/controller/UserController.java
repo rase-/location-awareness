@@ -6,6 +6,7 @@ package wad.spring.controller;
 
 import java.security.Principal;
 import java.util.List;
+import java.util.Scanner;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,7 +33,6 @@ public class UserController {
 
     @Autowired
     private PlaceService placeService;
-    
     @Autowired
     private UserService userService;
 
@@ -57,30 +57,33 @@ public class UserController {
     }
 
     @RequestMapping(value = "/history", method = RequestMethod.POST)
-    public String addMeasurementToHistory(@Valid @ModelAttribute MeasurementForm measurementform, BindingResult result, Principal principal) {
+    public String addMeasurementToHistory(@Valid @ModelAttribute("measurementform") MeasurementForm measurementform, BindingResult result, Principal principal) {
         if (result.hasErrors()) {
             return "user/history";
         }
-        
-        String[] lines = measurementform.getMeasurements().split("\n");
-        
-        for (String line : lines) {
+        String lines = measurementform.getMeasurements();
+        Scanner scanner = new Scanner(lines);
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
             String[] parts = line.split(" ");
+
+            //First part of the line should be a mac address
             if (!parts[0].matches("[a-zA-Z0-9:-]+")) {
-                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
+                result.addError(new FieldError("measurementform", "measurements", "The first part of the measurement should be a valid mac address following separation standards of : and -"));
                 return "user/history";
             }
-            if (!parts[1].matches("[-+]?[0-9]*\\.?[0-9]+")) {
-                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
+            //Second part of the line should be an integer (double precision not necessary here)
+            if (!parts[1].matches("[-]?[0-9]+")) {
+                result.addError(new FieldError("measurementform", "measurements", "Second part of each line should be an integer with a negative sign or without a sign."));
                 return "user/history";
             }
-            //There should not be a third element on one line
-            if (!line.matches("\\w \\w")) {
-                result.addError(new FieldError("measurementform", "measurements", "Measurementform should consist of mac address and received signal strength pairs (values separated by whitespace) separated by linebreak"));
-                return "user/history";
+            if (parts.length > 2) {
+                result.addError(new FieldError("measurementform", "measurements", "Each line should contain exactly two arguments"));
+                return "user/history"; 
             }
+            
         }
-        
+
         userService.localize(principal.getName(), measurementform);
         return "redirect:/user/history";
     }
@@ -97,7 +100,7 @@ public class UserController {
         userService.sendOrAcceptFriendRequestByNameToById(principal.getName(), userId);
         return "redirect:/user/friends";
     }
-    
+
     @RequestMapping(value = "/places/{placeId}")
     public String showPlaceInformation(@PathVariable Long placeId, Model model) {
         model.addAttribute(placeService.findOne(placeId));
