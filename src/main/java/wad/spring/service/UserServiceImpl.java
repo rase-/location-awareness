@@ -132,6 +132,12 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username);
         ArrayList<Fingerprint> userPrints = measurementform.makeFingerprints();
         List<Place> places = placeRepository.findAll();
+        
+        //If there are no places we won't do anything
+        if (places.isEmpty()) {
+            return;
+        }
+        
         double smallestError = Double.MAX_VALUE;
         Place leastErraneousPlace = places.get(0);
         for (Place p : places) {
@@ -175,7 +181,7 @@ public class UserServiceImpl implements UserService {
      * Matches user's regular fingerprints with given measurement and makes them hyperbolic prints
      * @param userPrints Users regular prints
      * @param measurementPrints Hyperbolic prints of an individual measurement
-     * @return 
+     * @return Hyperic userprints that match mac addresses of reference prints
      */
     private List<HyperbolicFingerprint> makeHyperbolic(List<Fingerprint> userPrints, List<HyperbolicFingerprint> measurementPrints) {
         ArrayList<HyperbolicFingerprint> userHyperbolicPrints = new ArrayList<HyperbolicFingerprint>();

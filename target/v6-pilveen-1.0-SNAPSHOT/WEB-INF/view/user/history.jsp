@@ -12,9 +12,9 @@
         <h2>Send measurement</h2>
         <form:form commandName="measurementform" actions="${pageContext.request.contextPath}/admin/places/${place.id}/measurements" method="POST">
             <form:textarea path="measurements" rows = "5" cols = "30"/><form:errors path="measurements" /> <br />
-            <input type="submit" />
+            <input name="submit" type="submit" />
         </form:form>
-        <p>For each row you need to input a valid mac address and an integer (if positive without + sign) separated by a space. Only the first to arguments per row are used.</p>
+        <p>For each row you need to input a valid mac address and an integer (if positive without + sign) separated by a space. Only the first two arguments per row are used.</p>
         <h2>Last 10 locations</h2>
         <c:forEach var="history" items="${history}">
             <p>${history.measureTime} near <a href=<c:url value="/user/places/${history.place.id}" />>${history.place.name}</a></p>
