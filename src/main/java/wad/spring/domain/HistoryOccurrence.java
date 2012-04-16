@@ -9,7 +9,7 @@ import java.util.Date;
 import javax.persistence.*;
 
 /**
- *
+ * Instane of a place at a given time. Each user as a list of HistoryOccurrences
  * @author tonykovanen
  */
 @Entity

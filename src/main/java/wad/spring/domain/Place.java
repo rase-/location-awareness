@@ -10,7 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Pattern;
 
 /**
- *
+ * A place holds measurements that have been added to it, it has a name and a description
  * @author tonykovanen
  */
 @Entity
@@ -19,8 +19,14 @@ public class Place implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     @Column(unique = true)
-    @Pattern(regexp="^[a-zA-Z0-9äöüÄÖÜ'-]*$", message="The name should only contains characters a-z, A-Z, 0-9, äöüÄÖÜ'-")
+    /**
+     * Name is validated to only contain letters a-zA-Z0-9äöüÄÖÜ'-
+     */
+    @Pattern(regexp="^[a-zA-Z0-9äöüÄÖÜ'-]+$", message="The name should only contains characters a-z, A-Z, 0-9, äöüÄÖÜ'-")
     private String name;
+    /**
+     * Description is validated to not contain characters <>%$
+     */
     @Pattern(regexp="^[^<>%$]*$", message="The description should not contain <, >, % or $ characters")
     private String description;
     

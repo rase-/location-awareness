@@ -8,7 +8,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- *
+ * Friendship request holds one sender and each user has a list of requests
  * @author tonykovanen
  */
 @Entity
@@ -16,6 +16,9 @@ public class FriendshipRequest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
+    /**
+     * Sender of the friendship request
+     */
     @ManyToOne
     private User sender;
 

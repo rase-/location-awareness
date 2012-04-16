@@ -14,7 +14,7 @@ import wad.spring.repository.MeasurementRepository;
 import wad.spring.repository.PlaceRepository;
 
 /**
- *
+ * An implementation of MeasurementService. Uses MeasurementRepository and PlaceRepository.
  * @author tonykovanen
  */
 @Service
@@ -26,6 +26,7 @@ public class MeasurementServiceImpl implements MeasurementService {
     PlaceRepository placeRepository;
     
     @Override
+    @Transactional(readOnly = true)
     public Measurement findOne(Long id) {
         return measurementRepository.findOne(id);
     }
@@ -41,7 +42,11 @@ public class MeasurementServiceImpl implements MeasurementService {
     public void save(Measurement measurement) {
         measurementRepository.save(measurement);
     }
-
+    /**
+     * Finds the place that has the given measurement, removes the measurement from it's measurementlist, deletes the measurement from database and saves changes to the place.
+     * @param placeId Id of given place
+     * @param measurementId If of given measurement
+     */
     @Override
     @Transactional
     public void deleteById(Long placeId, Long measurementId) {

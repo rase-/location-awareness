@@ -9,7 +9,7 @@ import java.util.Scanner;
 import javax.validation.constraints.Pattern;
 
 /**
- *
+ * A form object that is used to obtain form data and parse it to make fingerprints
  * @author tonykovanen
  */
 public class MeasurementForm {

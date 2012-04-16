@@ -10,17 +10,61 @@ import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.User;
 
 /**
- *
+ * Operations defined for users
  * @author tonykovanen
  */
 public interface UserService {
+    /**
+     * Finds a user by given username
+     * @param username Given username
+     * @return Returns found user or null if not found
+     */
     User findByUsername(String username);
+    /**
+     * Finds user by id
+     * @param id Given id
+     * @return Returns found user or null if not found
+     */
     User findOne(Long id);
+    /**
+     * Returns all users
+     * @return List of all users
+     */
     List<User> findAll();
+    /**
+     * Saves a user object into database
+     * @param user Given user
+     */
     void save(User user);
+    /**
+     * Sends or accepts a friend request depending if the requested user has asked the requesting user before
+     * @param username Username of requesting user
+     * @param id Id of requested user
+     */
     void sendOrAcceptFriendRequestByNameToById(String username, Long id);
+    /**
+     * Returns all friends that are not added as friends yet, and is not the user him/herself
+     * @param username Given username
+     * @return List of users not friends with or not self
+     */
     List<User> getUnaddedAndNotSelf(String username);
+    /**
+     * Localizes the user by given measurement information and saves the latest measurement to history
+     * @param username Given username of user
+     * @param measurementform Given measurement data as measurementform
+     */
     void localize(String username, MeasurementForm measurementform);
+    /**
+     * Gives all received friendship requests
+     * @param username Given username
+     * @returnList of all friendship requests received
+     */
     List<FriendshipRequest> getFriendshipRequests(String username);
+    /**
+     * Finds user information if first user is friends with the second
+     * @param username Username of the first user
+     * @param friendsId Id of the second user
+     * @return Returns the requested user if friends, otherwise returns null
+     */
     User findIfFriends(String username, Long friendsId);
 }

@@ -9,7 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import wad.spring.domain.*;
 import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
-
+/**
+ * Implementation only for testing an populating database with testusers
+ * @author tonykovanen
+ */
 @Service
 public class SecureServiceImpl implements SecureService {
     @Autowired

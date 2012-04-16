@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import wad.spring.domain.Place;
 
 /**
- *
+ * DAO for Places. JpaRepository provides basic queries.
  * @author tonykovanen
  */
 public interface PlaceRepository extends JpaRepository<Place, Long> {

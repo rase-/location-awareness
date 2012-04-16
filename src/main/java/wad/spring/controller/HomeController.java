@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import wad.spring.service.SecureService;
 
 /**
- *
+ * Takes all unidentified addresses and redirects to home
  * @author tonykovanen
  */
 

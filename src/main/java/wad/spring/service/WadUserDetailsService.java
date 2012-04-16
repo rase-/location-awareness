@@ -14,6 +14,10 @@ import wad.spring.domain.Role;
 import wad.spring.domain.User;
 import wad.spring.repository.UserRepository;
 
+/**
+ * A service that Spring Security uses in authentication
+ * @author tonykovanen
+ */
 @Service
 public class WadUserDetailsService implements UserDetailsService {
 

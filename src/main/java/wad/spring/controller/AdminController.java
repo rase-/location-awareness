@@ -26,9 +26,10 @@ import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
 
 /**
- *
+ * Ohjaa adminille kohdistuvat pyynnöt (sovellus/admin/jotain) oikeille näkymille ja kutsuu tarvittavat toiminnalisuudet
  * @author tonykovanen
  */
+
 @Controller
 @RequestMapping("admin")
 public class AdminController {
@@ -41,19 +42,35 @@ public class AdminController {
     @Autowired
     MeasurementService measurementService;
     
+    /**
+     * Redirects all non-defined addresses form admin/something to home
+     * @param principal Java security object that gives access to authenticated username
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Homepage view
+     */
     @RequestMapping("/*")
     public String adminHome(Principal principal, Model model) {
         model.addAttribute("user", userService.findByUsername(principal.getName()));
         return "admin/home";
     }
-    
+    /**
+     * Lists all places and provides navigation to see individual place information and shows form to create new places
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Places view
+     */
     @RequestMapping(value = "/places", method = RequestMethod.GET)
     public String showPlaces(Model model) {
         model.addAttribute("place", new Place());
         model.addAttribute("places", placeService.findAll());
         return "admin/places";
     }
-    
+    /**
+     * Retrieves a POST HTTP method and creates a new place and saves it to database if validation successful
+     * @param place The new Place object retrieved from form data
+     * @param result Validation result from creating object, see Place.class
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Redirects to admin/places
+     */
     @RequestMapping(value = "/places", method = RequestMethod.POST)
     public String addPlace(@Valid @ModelAttribute Place place, BindingResult result, Model model) {
         if (result.hasErrors()) {
@@ -69,7 +86,12 @@ public class AdminController {
         placeService.save(place);
         return "redirect:/admin/places";
     }
-    
+    /**
+     * Shows individual places information and provides a form for changing place informaton as well as deletion of place
+     * @param placeId Id of the place that is viewed
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Place view
+     */
     @RequestMapping(value = "places/{placeId}", method = RequestMethod.GET)
     public String showPlaceInformation(@PathVariable Long placeId, Model model) {
         Place place = placeService.findOne(placeId);
@@ -84,7 +106,14 @@ public class AdminController {
         model.addAttribute("edit", new Place());
         return "admin/place";
     } 
-    
+    /**
+     * Takes in the changed place information and saves the changes or returns to the form if validation was not successful
+     * @param edit Edited Place object
+     * @param result Result object of validation
+     * @param placeId Id of the place that was changed
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Redirects to admin/places
+     */
     @RequestMapping(value = "places/{placeId}", method = RequestMethod.POST)
     public String editPlaceInformation(@Valid @ModelAttribute("edit") Place edit, BindingResult result, @PathVariable Long placeId, Model model) {
         if (result.hasErrors()) {
@@ -97,13 +126,22 @@ public class AdminController {
         placeService.save(nonEdited);
         return "redirect:/admin/places";
     }
-    
+    /**
+     * Deletes a place with given id
+     * @param placeId Id of the place about to be deleted
+     * @return Redirects to admin/places
+     */
     @RequestMapping(value = "places/{placeId}", method = RequestMethod.DELETE)
     public String deletePlace(@PathVariable Long placeId) {
         placeService.deleteById(placeId);
         return "redirect:/admin/places";
     }
-    
+    /**
+     * Shows measurements to an individual place and provides a form to add new measurements
+     * @param placeId Id of the target place
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Measurements view
+     */
     @RequestMapping(value = "places/{placeId}/measurements", method = RequestMethod.GET)
     public String showMeasurements(@PathVariable Long placeId, Model model) {
         Place place = placeService.findOne(placeId);
@@ -117,7 +155,13 @@ public class AdminController {
         model.addAttribute("place", place);
         return "admin/measurements";
     }
-    
+    /**
+     * Takes form data from creating new measurements and validates it. Saves to database if valid
+     * @param form Form object that has form attributes' values
+     * @param result Result object that contains validation errors
+     * @param placeId Id of target place
+     * @return Redirects to measurements
+     */
     @RequestMapping(value = "places/{placeId}/measurements", method = RequestMethod.POST)
     public String addMeasurement(@Valid @ModelAttribute("measurementform") MeasurementForm form, BindingResult result, @PathVariable Long placeId) {
         if (result.hasErrors()) {
@@ -147,14 +191,25 @@ public class AdminController {
         placeService.addMeasurement(placeId, form);
         return "redirect:/admin/places/" + placeId + "/measurements";
     }
-    
+    /**
+     * Shows individual measurements info
+     * @param placeId Id of place that measurement belongs to
+     * @param measurementId Id of given measurement
+     * @param model Object which enables tranferring attributes from controller to view
+     * @return Returns measurement view
+     */
     @RequestMapping(value = "places/{placeId}/measurements/{measurementId}", method = RequestMethod.GET)
     public String showMeasurementInfo(@PathVariable Long placeId, @PathVariable Long measurementId, Model model) {
         model.addAttribute("measurement", measurementService.findOne(measurementId));
         model.addAttribute("place", placeService.findOne(placeId));
         return "admin/measurement";
     }
-    
+    /**
+     * Deletes measurement
+     * @param placeId Place of the measurement
+     * @param measurementId Measurement's id
+     * @return Redirects to measurements
+     */
     @RequestMapping(value = "places/{placeId}/measurements/{measurementId}")
     public String deleteMeasurement(@PathVariable Long placeId, @PathVariable Long measurementId) {
         measurementService.deleteById(placeId, measurementId);

@@ -16,7 +16,7 @@ import wad.spring.repository.MeasurementRepository;
 import wad.spring.repository.PlaceRepository;
 
 /**
- *
+ * Implementatio of the PlaceService. Uses PlaceRepository and MeasurementRepository.
  * @author tonykovanen
  */
 @Service
@@ -56,7 +56,11 @@ public class PlaceServiceImpl implements PlaceService {
     public void deleteById(Long id) {
         placeRepository.delete(id);
     }
-
+    /**
+     * Finds the given place, adds a measurement with time new Date() and hyperbolic fingerprints transformed from regular prints in measurementform, and saves place
+     * @param id
+     * @param measurementform 
+     */
     @Override
     @Transactional
     public void addMeasurement(Long id, MeasurementForm measurementform) {
@@ -68,6 +72,11 @@ public class PlaceServiceImpl implements PlaceService {
         placeRepository.save(place);
         //measurementRepository.save(measurement);
     }
+    /**
+     * Makes a hyperbolic fingerprint of each unique pair of prints
+     * @param regular Regular fingerprints as list
+     * @return Hyperbolic fingerprints as list
+     */
     private ArrayList<HyperbolicFingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
         ArrayList<HyperbolicFingerprint> hyperbolic = new ArrayList<HyperbolicFingerprint>();
         for(int i = 1; i < regular.size(); i++) {

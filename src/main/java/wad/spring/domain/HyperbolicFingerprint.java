@@ -7,7 +7,7 @@ package wad.spring.domain;
 import java.io.Serializable;
 
 /**
- *
+ * A hyperbolic fingerprint containing mac addresses and signal strenghts from two fingerprints as well as their logarithmic ratio (log10 (first/second))
  * @author tonykovanen
  */
 public class HyperbolicFingerprint implements Serializable {

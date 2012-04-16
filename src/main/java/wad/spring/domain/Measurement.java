@@ -10,7 +10,7 @@ import java.util.List;
 import javax.persistence.*;
 
 /**
- *
+ * A measurement consists of a list of hyperbolic fingerprints associated with the measurement, a measuretime and a place that it is linked to
  * @author tonykovanen
  */
 

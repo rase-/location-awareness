@@ -4,7 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Queue;
 import javax.persistence.*;
-
+/**
+ * A user in the system has a username, a password and n roles. It also has a list of friends, friendrequests and a history of places (HistoryOccurrence).
+ * @author tonykovanen
+ */
 @Entity(name = "USERS")
 public class User implements Serializable {
 
@@ -12,6 +15,9 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private String name;
+    /**
+     * Is unique
+     */
     @Column(unique = true)
     private String username;
     private String password;

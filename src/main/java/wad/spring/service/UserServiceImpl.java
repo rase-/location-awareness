@@ -17,7 +17,7 @@ import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
 
 /**
- *
+ * An implementation of the UserService using PlaceRepository, UserRepository and FriendshipRequestRepository.
  * @author tonykovanen
  */
 @Service
@@ -48,7 +48,12 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
         userRepository.save(user);
     }
-
+    
+    /**
+     * Finds both users and checks if the requested user has requested the requesting user as a friend. If so, then deletes friendrequests from both users (from the other user) and adds them as eachothers' friends. Otherwise a friendship request is sent to the requested user from requesting user. In the end both users' information is saved
+     * @param username Username of requesting user
+     * @param id Id of requested user
+     */
     @Override
     @Transactional
     public void sendOrAcceptFriendRequestByNameToById(String username, Long id) {
@@ -93,7 +98,12 @@ public class UserServiceImpl implements UserService {
     public User findOne(Long id) {
         return userRepository.findOne(id);
     }
-
+    
+    /**
+     * Goes through all users and checks if they are in given users friendlist. If not they are added to a list. In the end the list is returned after the user himself is removed from the list.
+     * @param username Given username
+     * @return A list of unadded friends and not self
+     */
     @Override
     @Transactional(readOnly = true)
     public List<User> getUnaddedAndNotSelf(String username) {
@@ -110,7 +120,12 @@ public class UserServiceImpl implements UserService {
         unadded.remove(user);
         return unadded;
     }
-
+    
+    /**
+     * Goes through each place: matches user's fingerprints with each measurement in the place (missing values are given a -100 signal strength which is really low) as hyperbolic fingerprints and a squared error is calculated using euclidean distance. The average of errors from all measruements in a place is calculated and matched against the least erraneous place. The best is then updated to the least erraneous place. In the end the best place is added to history of the user.
+     * @param username Given username
+     * @param measurementform Given measurementinformation
+     */
     @Override
     @Transactional
     public void localize(String username, MeasurementForm measurementform) {
@@ -143,7 +158,12 @@ public class UserServiceImpl implements UserService {
         user.getHistory().add(occurrence);
         userRepository.save(user);
     }
-    
+    /**
+     * Calculates euclidean distance between user's hyperbolic prints and one reference measurement
+     * @param userPrints User's prints
+     * @param reference One measurement in a place
+     * @return Squared error
+     */
     private double euclideanDistance(List<HyperbolicFingerprint> userPrints, List<HyperbolicFingerprint> reference) {
         double sum = 0;
         for (int i = 0; i < userPrints.size(); i++) {
@@ -151,7 +171,12 @@ public class UserServiceImpl implements UserService {
         }
         return Math.sqrt(sum);
     }
-    
+    /**
+     * Matches user's regular fingerprints with given measurement and makes them hyperbolic prints
+     * @param userPrints Users regular prints
+     * @param measurementPrints Hyperbolic prints of an individual measurement
+     * @return 
+     */
     private List<HyperbolicFingerprint> makeHyperbolic(List<Fingerprint> userPrints, List<HyperbolicFingerprint> measurementPrints) {
         ArrayList<HyperbolicFingerprint> userHyperbolicPrints = new ArrayList<HyperbolicFingerprint>();
         HashMap<String, Double> userPrintsMap = new HashMap<String, Double>();
@@ -181,7 +206,13 @@ public class UserServiceImpl implements UserService {
     public List<FriendshipRequest> getFriendshipRequests(String username) {
         return userRepository.findByUsername(username).getReceivedFriendRequests();
     }
-
+    
+    /**
+     * Checks if first user's friends has the second user and returns the other if yes
+     * @param username First user's username
+     * @param friendsId Second user's id
+     * @return Second user if friends, otherwise null
+     */
     @Override
     @Transactional(readOnly = true)
     public User findIfFriends(String username, Long friendsId) {

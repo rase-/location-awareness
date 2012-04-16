@@ -3,7 +3,10 @@ package wad.spring.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
-
+/**le
+ * Each user has from 0 to n roles which are used to control user priviledges. The role consists of a name and the users that have the role
+ * @author tonykovanen
+ */
 @Entity(name = "ROLES")
 public class Role implements Serializable {
 

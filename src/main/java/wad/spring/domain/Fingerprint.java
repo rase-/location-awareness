@@ -7,7 +7,7 @@ package wad.spring.domain;
 import java.io.Serializable;
 
 /**
- *
+ * A class that stores mac address signal strength pairs
  * @author tonykovanen
  */
 public class Fingerprint implements Serializable {
