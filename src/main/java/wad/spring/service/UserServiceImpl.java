@@ -223,4 +223,21 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+    
+    /**
+     * Validation is done on controller level so just creates a new user and saves it to database
+     * @param userForm Data of user in UserForm
+     */
+    @Transactional
+    @Override
+    public void register(UserForm userForm) {
+        User user = userForm.makeUser();
+        List<Role> roles = new ArrayList<Role>();
+        Role role = new Role();
+        role.setRolename("user");
+        roles.add(role);
+        user.setRoles(roles);
+        
+        userRepository.save(user);
+    }
 }

@@ -200,7 +200,12 @@ public class AdminController {
      */
     @RequestMapping(value = "places/{placeId}/measurements/{measurementId}", method = RequestMethod.GET)
     public String showMeasurementInfo(@PathVariable Long placeId, @PathVariable Long measurementId, Model model) {
-        model.addAttribute("measurement", measurementService.findOne(measurementId));
+        Measurement m = measurementService.findOne(measurementId);
+        if (m == null) {
+            model.addAttribute("message", "Given measurement does not exist.");
+            return "troublehshooting";
+        }
+        model.addAttribute("measurement", m);
         model.addAttribute("place", placeService.findOne(placeId));
         return "admin/measurement";
     }

@@ -61,6 +61,12 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/history";
         }
+        
+        if (measurementform.getMeasurements().trim().equals("")) {
+            result.addError(new FieldError("measurementform", "measurements", "The measurements should not be empty"));
+            return "user/history";
+        }
+        
         String lines = measurementform.getMeasurements();
         Scanner scanner = new Scanner(lines);
         while (scanner.hasNextLine()) {
@@ -93,7 +99,11 @@ public class UserController {
     }
 
     @RequestMapping(value = "/friendRequests/{userId}", method = RequestMethod.GET)
-    public String processFriendRequest(@PathVariable Long userId, Principal principal) {
+    public String processFriendRequest(@PathVariable Long userId, Principal principal, Model model) {
+        if (userService.findOne(userId) == null) {
+            model.addAttribute("message", "Requested user does not exist");
+            return "troubleshooting";
+        }
         userService.sendOrAcceptFriendRequestByNameToById(principal.getName(), userId);
         return "redirect:/user/friends";
     }

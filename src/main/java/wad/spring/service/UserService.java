@@ -8,6 +8,7 @@ import java.util.List;
 import wad.spring.domain.FriendshipRequest;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.User;
+import wad.spring.domain.UserForm;
 
 /**
  * Operations defined for users
@@ -67,4 +68,10 @@ public interface UserService {
      * @return Returns the requested user if friends, otherwise returns null
      */
     User findIfFriends(String username, Long friendsId);
+    /**
+     * Registers a new user from UserForm data
+     * @param userForm Data of new user
+     */
+    void register(UserForm userForm);
+    
 }

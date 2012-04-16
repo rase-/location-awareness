@@ -9,5 +9,6 @@
     <body>
         <h1>Welcome!</h1>
         <p>Are you a <a href=<c:url value="/user/home" />>user</a> or an <a href=<c:url value="/admin/home" />>admin</a>?</p>
+        <p><a href=<c:url value="/registration" />>Register</a></p>
     </body>
 </html>
