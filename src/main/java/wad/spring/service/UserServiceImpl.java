@@ -147,7 +147,7 @@ public class UserServiceImpl implements UserService {
             // We then want to calculate the euclidean distance between these two
             for (Measurement m : measurements) {
                 List<HyperbolicFingerprint> userHyperbolicPrints = makeHyperbolic(userPrints, m.getFingerprints());
-                placeErrors += (euclideanDistance(userHyperbolicPrints, m.getFingerprints()));
+                placeErrors += Math.abs((euclideanDistance(userHyperbolicPrints, m.getFingerprints())));
             }
             // We take the average of all the errors for that one place and see if it is the lowest
             placeErrors = placeErrors / (measurements.size());
