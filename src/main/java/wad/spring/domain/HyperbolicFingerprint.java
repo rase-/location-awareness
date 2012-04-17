@@ -22,8 +22,8 @@ public class HyperbolicFingerprint implements Serializable {
         this.secondMacAddress = print2.getMacAddress();
         this.firstSignalStrength = print1.getSignalStrength();
         this.secondSignalStrength = print2.getSignalStrength();
-        this.logarithmicRatio = Math.log10(this.firstSignalStrength / this.secondSignalStrength);
-    }
+        this.logarithmicRatio = Math.abs(Math.log10(this.firstSignalStrength / this.secondSignalStrength)); //Added abs to keep the squred error for negative and positive values the same. Hope this helps a bit.
+     }
 
     public String getFirstMacAddress() {
         return firstMacAddress;
