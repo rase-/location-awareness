@@ -191,7 +191,7 @@ public class UserServiceImpl implements UserService {
             // We want to match user fingerprints for each hyperbolic measurement in each place
             // We then want to calculate the euclidean distance between these two
             for (Measurement m : measurements) {
-                List<HyperbolicFingerprint> userHyperbolicPrints = makeHyperbolic(userPrints, m.getFingerprints());
+                List<HyperbolicFingerprint> userHyperbolicPrints = matchHyperbolic(userPrints, m.getFingerprints());
                 double placeError = euclideanDistance(userHyperbolicPrints, m.getFingerprints());
                 if (placeError < smallestError) {
                     smallestError = placeError;
@@ -227,7 +227,7 @@ public class UserServiceImpl implements UserService {
      * @param measurementPrints Hyperbolic prints of an individual measurement
      * @return Hyperic userprints that match mac addresses of reference prints
      */
-    private List<HyperbolicFingerprint> makeHyperbolic(List<Fingerprint> userPrints, List<HyperbolicFingerprint> measurementPrints) {
+    private List<HyperbolicFingerprint> matchHyperbolic(List<Fingerprint> userPrints, List<HyperbolicFingerprint> measurementPrints) {
         ArrayList<HyperbolicFingerprint> userHyperbolicPrints = new ArrayList<HyperbolicFingerprint>();
         HashMap<String, Double> userPrintsMap = new HashMap<String, Double>();
         for (Fingerprint print : userPrints) {
