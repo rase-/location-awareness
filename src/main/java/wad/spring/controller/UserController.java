@@ -5,6 +5,7 @@
 package wad.spring.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import javax.validation.Valid;
@@ -13,10 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+import wad.spring.domain.HistoryOccurrence;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
 import wad.spring.domain.User;
@@ -128,5 +127,16 @@ public class UserController {
         }
         model.addAttribute("friend", friend);
         return "user/friend";
+    }
+    
+    @RequestMapping(value = "/history/stringRepresentation.json", method = RequestMethod.GET)
+    @ResponseBody
+    public List<String> produceJSONHistoryAsString(Principal principal) {
+        ArrayList<String> placenames = new ArrayList<String>();
+        List<HistoryOccurrence> history = userService.findByUsername(principal.getName()).getHistory();
+        for (HistoryOccurrence h : history) {
+            placenames.add(h.getPlace().getName());
+        }
+        return placenames;
     }
 }
