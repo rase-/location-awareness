@@ -234,8 +234,6 @@ public class AdminController {
      */
     @RequestMapping("places/{placeId}/measurements/file")
     public void makeFileOutOfMeasurementsAndSendForDownload(@PathVariable Long placeId, HttpServletResponse response) throws IOException {
-//        model.addAttribute("filename", fileForm.getFilename());
-//        model.addAttribute("bibtex", bibtexService.generateBibtex());
         Place place = placeService.findOne(placeId);
         response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition","attachment;filename=" + place.getName() + ".txt");
