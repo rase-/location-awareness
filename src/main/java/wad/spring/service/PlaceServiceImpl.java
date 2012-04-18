@@ -4,10 +4,7 @@
  */
 package wad.spring.service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,25 +64,14 @@ public class PlaceServiceImpl implements PlaceService {
         Place place = placeRepository.findOne(id);
         Measurement measurement = new Measurement();
         measurement.setMeasureTime(new Date());
-        measurement.setFingerprints(makeHyperbolic(measurementform.makeFingerprints()));
+        List<Fingerprint> prints = measurementform.makeFingerprints();
+        Collections.sort(prints); // We sort the prints already here to make matching to user prints easier
+        measurement.setFingerprints(prints);
         place.getMeasurements().add(measurement);
         placeRepository.save(place);
         //measurementRepository.save(measurement);
     }
-    /**
-     * Makes a hyperbolic fingerprint of each unique pair of prints
-     * @param regular Regular fingerprints as list
-     * @return Hyperbolic fingerprints as list
-     */
-    private ArrayList<HyperbolicFingerprint> makeHyperbolic(ArrayList<Fingerprint> regular) {
-        ArrayList<HyperbolicFingerprint> hyperbolic = new ArrayList<HyperbolicFingerprint>();
-        for(int i = 1; i < regular.size(); i++) {
-            for(int j = 0; j < i; j++) {
-                hyperbolic.add(new HyperbolicFingerprint(regular.get(i), regular.get(j)));
-            }
-            
-        }
-        return hyperbolic;
-    }
+    
+    
     
 }

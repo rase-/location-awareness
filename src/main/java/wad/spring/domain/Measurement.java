@@ -19,7 +19,7 @@ public class Measurement implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
-    private List<HyperbolicFingerprint> fingerprints;
+    private List<Fingerprint> fingerprints;
     @Temporal(TemporalType.TIMESTAMP)
     private Date measureTime;
     @ManyToOne
@@ -40,11 +40,11 @@ public class Measurement implements Serializable {
         return id;
     }
 
-    public List<HyperbolicFingerprint> getFingerprints() {
+    public List<Fingerprint> getFingerprints() {
         return this.fingerprints;
     }
     
-    public void setFingerprints(List<HyperbolicFingerprint> fingerprints) {
+    public void setFingerprints(List<Fingerprint> fingerprints) {
         this.fingerprints = fingerprints;
     }
 
