@@ -13,7 +13,7 @@ import wad.spring.repository.MeasurementRepository;
 import wad.spring.repository.PlaceRepository;
 
 /**
- * Implementatio of the PlaceService. Uses PlaceRepository and MeasurementRepository.
+ * Implementation of the PlaceService. Uses PlaceRepository and MeasurementRepository.
  * @author tonykovanen
  */
 @Service
@@ -72,6 +72,14 @@ public class PlaceServiceImpl implements PlaceService {
         //measurementRepository.save(measurement);
     }
     
-    
+    @Override
+    public String transformDataToText(Place place) {
+        List<Measurement> measurements = place.getMeasurements();
+        String ret = place.getName() + "\n";
+        for (Measurement m : measurements) {
+            ret += m.toString();
+        }
+        return ret;
+    }
     
 }

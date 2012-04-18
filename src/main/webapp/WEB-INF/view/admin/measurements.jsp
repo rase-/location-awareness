@@ -10,6 +10,7 @@
     <body>
         <h1>${place.name} measurements</h1>
         <h2>Add a new measurement</h2>
+        <p><a href=<c:url value="/admin/places/${place.id}/measurements/file" />>Download measurements as txt file</a> </p>
         <form:form commandName="measurementform" actions="${pageContext.request.contextPath}/admin/places/${place.id}/measurements" method="POST">
             <form:textarea path="measurements" rows = "5" cols = "30"/><form:errors path="measurements" /> <br />
             <input name="submit" type="submit" />
@@ -19,5 +20,6 @@
         <c:forEach var="measurement" items="${place.measurements}">
             <p><a href=<c:url value="/admin/places/${place.id}/measurements/${measurement.id}" />>${measurement.measureTime}</a></p>
         </c:forEach>
+        
     </body>
 </html>

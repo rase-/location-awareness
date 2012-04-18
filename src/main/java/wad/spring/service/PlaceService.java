@@ -46,4 +46,9 @@ public interface PlaceService {
      * @param measurementform Given measurement data in measurementform
      */
     void addMeasurement(Long id, MeasurementForm measurementform);
+    /**
+     * Transforms place data into a string format
+     * @return A string representation that can be transformed into a file
+     */
+    String transformDataToText(Place place);
 }

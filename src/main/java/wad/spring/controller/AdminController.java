@@ -4,11 +4,16 @@
  */
 package wad.spring.controller;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringBufferInputStream;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -219,5 +224,23 @@ public class AdminController {
     public String deleteMeasurement(@PathVariable Long placeId, @PathVariable Long measurementId) {
         measurementService.deleteById(placeId, measurementId);
         return "redirect:/admin/places/" + placeId + "/measurements";
+    } 
+    
+    /**
+     * Makes a downloadable text file available
+     * @param placeId Id of the place to be turned to text file
+     * @param response HttpServletResponse is an object that holds the role of delivering output, Model partly uses this object but plain response object is better for this purpose
+     * @throws IOException If HttpResponse is not found, which should be NEVER
+     */
+    @RequestMapping("places/{placeId}/measurements/file")
+    public void makeFileOutOfMeasurementsAndSendForDownload(@PathVariable Long placeId, HttpServletResponse response) throws IOException {
+//        model.addAttribute("filename", fileForm.getFilename());
+//        model.addAttribute("bibtex", bibtexService.generateBibtex());
+        Place place = placeService.findOne(placeId);
+        response.setContentType("application/octet-stream");
+        response.setHeader("Content-Disposition","attachment;filename=" + place.getName() + ".txt");
+        InputStream is = new StringBufferInputStream(placeService.transformDataToText(place));
+        IOUtils.copy(is, response.getOutputStream());
+        response.flushBuffer();
     }
 }

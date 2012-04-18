@@ -10,6 +10,7 @@
     <body>
         <h1>${place.name}</h1>
         <p><a href=<c:url value="/admin/places/${place.id}/measurements" />>Manage measurements</a></p>
+        <p><a href=<c:url value="/admin/places/${id}/measurements/file" />>Download measurements as txt file</a></p>
         <h1>Change place information</h1>
         <form:form commandName="edit" action="${pageContext.request.contextPath}/admin/places/${id}" method="POST">
             <form:input path="name" value="${place.name}" /><form:errors path="name" /> <br />
@@ -19,6 +20,7 @@
         <form:form commandName="delete" action="${pageContext.request.contextPath}/admin/places/${id}" method="DELETE">
             <input type="submit" value="Delete" />
         </form:form>
+        
     </body>
     
 </html>

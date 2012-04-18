@@ -42,7 +42,12 @@ public class Fingerprint implements Serializable, Comparable {
         if (t instanceof Fingerprint) {
             Fingerprint f = (Fingerprint) t;
             return this.macAddress.compareTo(f.getMacAddress());
-        } 
+        }
         return this.macAddress.compareTo("");
+    }
+
+    @Override
+    public String toString() {
+        return macAddress + " " + signalStrength;
     }
 }

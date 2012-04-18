@@ -69,5 +69,14 @@ public class Measurement implements Serializable {
         this.place = place;
     }
 
+    @Override
+    public String toString() {
+        String ret = measureTime.toString();
+        ret += "\n";
+        for (Fingerprint f : fingerprints) {
+            ret += f.toString() + "\n";
+        }
+        return ret;
+    }
     
 }
