@@ -131,12 +131,12 @@ public class UserController {
     
     @RequestMapping(value = "/history/stringRepresentation.json", method = RequestMethod.GET)
     @ResponseBody
-    public List<String> produceJSONHistoryAsString(Principal principal) {
+    public String produceJSONHistoryAsString(Principal principal) {
         ArrayList<String> placenames = new ArrayList<String>();
         List<HistoryOccurrence> history = userService.findByUsername(principal.getName()).getHistory();
         for (HistoryOccurrence h : history) {
             placenames.add(h.getPlace().getName());
         }
-        return placenames;
+        return placenames.toString();
     }
 }
