@@ -176,7 +176,7 @@ public class UserServiceImpl implements UserService {
      * Goes through each place: matches user's fingerprints with each
      * measurement in the place (missing values are given a -100 signal strength
      * which is really low) as hyperbolic fingerprints and a squared error is
-     * calculated using euclidean distance. Error of a measruement in a place is
+     * calculated using euclidean distance. Error of a measurement in a place is
      * calculated and matched against the least erraneous place. The best is
      * then updated to the least erraneous place. In the end the best place is
      * added to history of the user.
