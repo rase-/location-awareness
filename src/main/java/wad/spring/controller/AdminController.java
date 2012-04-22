@@ -208,7 +208,7 @@ public class AdminController {
         Measurement m = measurementService.findOne(measurementId);
         if (m == null) {
             model.addAttribute("message", "Given measurement does not exist.");
-            return "troublehshooting";
+            return "troubleshooting";
         }
         model.addAttribute("measurement", m);
         model.addAttribute("place", placeService.findOne(placeId));
