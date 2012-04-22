@@ -295,9 +295,6 @@ public class UserServiceImpl implements UserService {
      * @return Euclidean distance between the two prints
      */
     private double matchPrintsAndMakeHyperbolicAndCalculateError(List<Fingerprint> userPrints, List<Fingerprint> databasePrints) {
-        // Let's now assume sorting has taken place before
-//        Collections.sort(userPrints); //We might want to position these somewhere else so we only need to sort once per localization
-//        Collections.sort(databasePrints);
         int i = 0;
         int j = 0;
         ArrayList<Fingerprint> matchedUserPrints = new ArrayList<Fingerprint>();

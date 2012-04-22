@@ -51,7 +51,10 @@ public class PlaceServiceImpl implements PlaceService {
     @Override
     @Transactional
     public void deleteById(Long id) {
-        placeRepository.delete(id);
+        Place place = placeRepository.findOne(id);
+        
+        measurementRepository.delete(place.getMeasurements());
+        placeRepository.delete(place);
     }
     /**
      * Finds the given place, adds a measurement with time new Date() and hyperbolic fingerprints transformed from regular prints in measurementform, and saves place
