@@ -23,7 +23,7 @@ public class Place implements Serializable, Persistable<Long> {
     /**
      * Name is validated to only contain letters a-zA-Z0-9äöüÄÖÜ'-
      */
-    @Pattern(regexp="^[a-zA-Z0-9äöüÄÖÜ'- ]+$", message="The name should only contains characters a-z, A-Z, 0-9, äöüÄÖÜ'-")
+    @Pattern(regexp="^[^<>%$]+$", message="The name should only contains characters a-z, A-Z, 0-9, äöüÄÖÜ'-")
     private String name;
     /**
      * Description is validated to not contain characters <>%$
