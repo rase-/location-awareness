@@ -4,6 +4,9 @@
     <class>wad.spring.domain.Place</class>
     <class>wad.spring.domain.Role</class>
     <class>wad.spring.domain.User</class>
+    <class>wad.spring.domain.FriendshipRequest</class>
+    <class>wad.spring.domain.HistoryOccurrence</class>
+    <class>wad.spring.domain.Measurement</class>
     <properties>
       <property name="showSql" value="true"/>
       <property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>
