@@ -30,7 +30,7 @@ public class Place implements Serializable {
     @Pattern(regexp="^[^<>%$]*$", message="The description should not contain <, >, % or $ characters")
     private String description;
     
-    @OneToMany(mappedBy = "place", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "place", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<Measurement> measurements;
 
     public Long getId() {
