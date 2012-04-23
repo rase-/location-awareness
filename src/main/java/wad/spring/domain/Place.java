@@ -8,13 +8,14 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import org.springframework.data.domain.Persistable;
 
 /**
  * A place holds measurements that have been added to it, it has a name and a description
  * @author tonykovanen
  */
 @Entity
-public class Place implements Serializable {
+public class Place implements Serializable, Persistable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
@@ -63,6 +64,11 @@ public class Place implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public boolean isNew() {
+        return id == null;
     }
     
    

@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
+import org.springframework.data.domain.Persistable;
 
 /**
  * A measurement consists of a list of hyperbolic fingerprints associated with the measurement, a measuretime and a place that it is linked to
@@ -15,14 +16,14 @@ import javax.persistence.*;
  */
 
 @Entity
-public class Measurement implements Serializable {
+public class Measurement implements Serializable, Persistable<Long> {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     private Long id;
     private List<Fingerprint> fingerprints;
     @Temporal(TemporalType.TIMESTAMP)
     private Date measureTime;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Place place;
 
     public boolean equals(Object o) {
@@ -77,6 +78,11 @@ public class Measurement implements Serializable {
             ret += f.toString() + "\n";
         }
         return ret;
+    }
+
+    @Override
+    public boolean isNew() {
+        return id == null;
     }
     
 }
