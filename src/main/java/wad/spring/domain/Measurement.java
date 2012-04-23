@@ -24,6 +24,7 @@ public class Measurement implements Serializable, Persistable<Long> {
     @Temporal(TemporalType.TIMESTAMP)
     private Date measureTime;
     @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "placeId")
     private Place place;
 
     public boolean equals(Object o) {
