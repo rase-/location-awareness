@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
  * @author tonykovanen
  */
 public class MeasurementForm {
-    
+    private LocalizationType type;
     private String measurements;
 
     public String getMeasurements() {
@@ -34,5 +34,13 @@ public class MeasurementForm {
             fingerprints.add(new Fingerprint(individual[0], Integer.parseInt(individual[1])));
         }
         return fingerprints;
+    }
+    
+    public void setType(LocalizationType type) {
+        this.type = type;
+    }
+    
+    public LocalizationType getType() {
+        return this.type;
     }
 }

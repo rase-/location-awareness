@@ -16,7 +16,10 @@ import wad.spring.repository.UserRepository;
  *
  * @author tonykovanen
  */
-
+/**
+ * Implementation of the localization service. 
+ * @author tonykovanen
+ */
 @Service
 public class LocalizationServiceImpl implements LocalizationService {
 

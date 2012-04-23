@@ -127,50 +127,7 @@ public class UserServiceImpl implements UserService {
         return unadded;
     }
 
-//    /**
-//     * Goes through each place: matches user's fingerprints with each measurement in the place (missing values are given a -100 signal strength which is really low) as hyperbolic fingerprints and a squared error is calculated using euclidean distance. The average of errors from all measruements in a place is calculated and matched against the least erraneous place. The best is then updated to the least erraneous place. In the end the best place is added to history of the user.
-//     * @param username Given username
-//     * @param measurementform Given measurementinformation
-//     */
-//    @Override
-//    @Transactional
-//    public void localize(String username, MeasurementForm measurementform) {
-//        User user = userRepository.findByUsername(username);
-//        ArrayList<Fingerprint> userPrints = measurementform.makeFingerprints();
-//        List<Place> places = placeRepository.findAll();
-//        
-//        //If there are no places we won't do anything
-//        if (places.isEmpty()) {
-//            return;
-//        }
-//        
-//        double smallestError = Double.MAX_VALUE;
-//        Place leastErraneousPlace = places.get(0);
-//        for (Place p : places) {
-//            List<Measurement> measurements = p.getMeasurements();
-//            double placeErrors = 0;
-//            // We want to match user fingerprints for each hyperbolic measurement in each place
-//            // We then want to calculate the euclidean distance between these two
-//            for (Measurement m : measurements) {
-//                List<HyperbolicFingerprint> userHyperbolicPrints = makeHyperbolic(userPrints, m.getFingerprints());
-//                placeErrors += Math.abs((euclideanDistance(userHyperbolicPrints, m.getFingerprints())));
-//            }
-//            // We take the average of all the errors for that one place and see if it is the lowest
-//            placeErrors = placeErrors / (measurements.size());
-//            if (placeErrors < smallestError) {
-//                smallestError = placeErrors;
-//                leastErraneousPlace = p;
-//            }
-//        }
-//        
-//        while (user.getHistory().size() >= 10) user.getHistory().remove(0);
-//        HistoryOccurrence occurrence = new HistoryOccurrence();
-//        occurrence.setPlace(leastErraneousPlace);
-//        occurrence.setMeasureTime(new Date());
-//        user.getHistory().add(occurrence);
-//        userRepository.save(user);
-//    }
-    // Differs from ^ by not using average of each measurement error in a place. At first sight seems to work better.
+
     /**
      *
      * Goes through each place: matches user's fingerprints with each

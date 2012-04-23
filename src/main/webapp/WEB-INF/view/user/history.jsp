@@ -11,6 +11,11 @@
         <h1>History</h1>
         <h2>Send measurement</h2>
         <form:form commandName="measurementform" actions="${pageContext.request.contextPath}/admin/places/${place.id}/measurements" method="POST">
+            <p>Choose localization type</p>
+            <form:select path="type">
+                <form:option value="ByBestError" label="By best measurement" />
+                <form:option value="ByErrorAverage" label="By average of places' measurements" />
+            </form:select> <br />
             <form:textarea path="measurements" rows = "5" cols = "30"/><form:errors path="measurements" /> <br />
             <input name="submit" type="submit" />
         </form:form>

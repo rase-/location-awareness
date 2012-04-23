@@ -15,10 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
-import wad.spring.domain.HistoryOccurrence;
-import wad.spring.domain.MeasurementForm;
-import wad.spring.domain.Place;
-import wad.spring.domain.User;
+import wad.spring.domain.*;
 import wad.spring.service.LocalizationService;
 import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
@@ -30,9 +27,9 @@ import wad.spring.service.UserService;
 @Controller
 @RequestMapping("user")
 public class UserController {
+
     @Autowired
     private LocalizationService localizationService;
-    
     @Autowired
     private PlaceService placeService;
     @Autowired
@@ -63,12 +60,12 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/history";
         }
-        
+
         if (measurementform.getMeasurements().trim().equals("")) {
             result.addError(new FieldError("measurementform", "measurements", "The measurements should not be empty"));
             return "user/history";
         }
-        
+
         String lines = measurementform.getMeasurements();
         Scanner scanner = new Scanner(lines);
         while (scanner.hasNextLine()) {
@@ -85,11 +82,14 @@ public class UserController {
                 result.addError(new FieldError("measurementform", "measurements", "Second part of each line should be an integer with a negative sign or without a sign."));
                 return "user/history";
             }
-            
-            
-        }
 
-        localizationService.localizeByBestError(principal.getName(), measurementform);
+
+        }
+        if (measurementform.getType().equals(LocalizationType.ByBestError)) {
+            localizationService.localizeByBestError(principal.getName(), measurementform);
+        } else {
+            localizationService.localizeByErrorAverage(principal.getName(), measurementform);
+        }
         return "redirect:/user/history";
     }
 
@@ -120,8 +120,8 @@ public class UserController {
         model.addAttribute("place", place);
         return "user/place";
     }
-    
-    @RequestMapping(value= "/friends/{userId}", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/friends/{userId}", method = RequestMethod.GET)
     public String showFriendInformation(@PathVariable Long userId, Principal principal, Model model) {
         User friend = userService.findIfFriends(principal.getName(), userId);
         if (friend == null) {
@@ -131,7 +131,7 @@ public class UserController {
         model.addAttribute("friend", friend);
         return "user/friend";
     }
-    
+
     @RequestMapping(value = "/history/stringRepresentation.json", method = RequestMethod.GET)
     @ResponseBody
     public String produceJSONHistoryAsString(Principal principal) {
