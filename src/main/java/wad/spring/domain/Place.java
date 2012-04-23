@@ -31,13 +31,14 @@ public class Place implements Serializable, Persistable<Long> {
     @Pattern(regexp="^[^<>%$]*$", message="The description should not contain <, >, % or $ characters")
     private String description;
     
+    
     @OneToMany(mappedBy = "place", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<Measurement> measurements;
 
     public Long getId() {
         return id;
     }
-
+    
     public List<Measurement> getMeasurements() {
         return measurements;
     }
