@@ -70,6 +70,7 @@ public class PlaceServiceImpl implements PlaceService {
         List<Fingerprint> prints = measurementform.makeFingerprints();
         Collections.sort(prints); // We sort the prints already here to make matching to user prints easier
         measurement.setFingerprints(prints);
+        measurement.setPlace(place);
         place.getMeasurements().add(measurement);
         placeRepository.save(place);
         //measurementRepository.save(measurement);
