@@ -116,4 +116,5 @@ public class User implements Serializable {
         this.receivedFriendRequests = receivedFriendRequests;
     }
     
+    
 }
