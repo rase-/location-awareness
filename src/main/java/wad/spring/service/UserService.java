@@ -50,12 +50,6 @@ public interface UserService {
      */
     List<User> getUnaddedAndNotSelf(String username);
     /**
-     * Localizes the user by given measurement information and saves the latest measurement to history
-     * @param username Given username of user
-     * @param measurementform Given measurement data as measurementform
-     */
-    void localize(String username, MeasurementForm measurementform);
-    /**
      * Gives all received friendship requests
      * @param username Given username
      * @returnList of all friendship requests received

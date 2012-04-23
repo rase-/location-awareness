@@ -19,6 +19,7 @@ import wad.spring.domain.HistoryOccurrence;
 import wad.spring.domain.MeasurementForm;
 import wad.spring.domain.Place;
 import wad.spring.domain.User;
+import wad.spring.service.LocalizationService;
 import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
 
@@ -29,7 +30,9 @@ import wad.spring.service.UserService;
 @Controller
 @RequestMapping("user")
 public class UserController {
-
+    @Autowired
+    private LocalizationService localizationService;
+    
     @Autowired
     private PlaceService placeService;
     @Autowired
@@ -86,7 +89,7 @@ public class UserController {
             
         }
 
-        userService.localize(principal.getName(), measurementform);
+        localizationService.localizeByBestError(principal.getName(), measurementform);
         return "redirect:/user/history";
     }
 
