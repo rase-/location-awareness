@@ -4,6 +4,7 @@
  */
 package wad.spring.service;
 
+import form.UserForm;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,7 +70,8 @@ public class UserServiceImpl implements UserService {
 //        if (!addedUser.getFriends().contains(addingUser)) {
 //            addedUser.getFriends().add(addingUser);
 //        }
-
+        
+        // Checks if the sending user has received a request from target user, if so then friendship is established
         for (FriendshipRequest f : addingUser.getReceivedFriendRequests()) {
             if (f.getSender().equals(addedUser)) {
                 addingUser.getReceivedFriendRequests().remove(f);
@@ -81,13 +83,15 @@ public class UserServiceImpl implements UserService {
                 return;
             }
         }
-
+        // Checks if a friendshiprequest has already been filed then there is no need to continue
         for (FriendshipRequest f : addedUser.getReceivedFriendRequests()) {
             if (f.getSender().equals(addingUser)) {
                 return;
             }
         }
-
+        
+        // Otherwise we add a new friendship request for the added user
+        
         FriendshipRequest request = new FriendshipRequest();
         request.setSender(addingUser);
         addedUser.getReceivedFriendRequests().add(request);
@@ -185,5 +189,35 @@ public class UserServiceImpl implements UserService {
         user.setRoles(roles);
 
         userRepository.save(user);
+    }
+    
+    /**
+     * Deletes user iff both the target and invoking user are not the same (i.e. an admin can not delete himself
+     * @param userId Id of target user
+     * @param username Id of invoking admin
+     */
+    @Override
+    @Transactional
+    public void deleteUser(Long userId, String username) {
+        if (userRepository.findOne(userId).equals(userRepository.findByUsername(username))) {
+            return;
+        }
+        userRepository.delete(userId);
+    }
+    /**
+     * Promotes target user as admin, if the user does not have the aforementioned role
+     * @param userId Id of promoted user
+     */
+    @Override
+    @Transactional
+    public void promoteAdmin(Long userId) {
+        User user = userRepository.findOne(userId);
+        Role role = new Role();
+        role.setRolename("admin");
+        if (!user.getRoles().contains(role)) {
+            user.getRoles().add(role);
+            userRepository.save(user);
+        }
+        
     }
 }

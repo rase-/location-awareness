@@ -13,7 +13,7 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import wad.spring.domain.UserForm;
+import form.UserForm;
 import wad.spring.service.SecureService;
 import wad.spring.service.UserService;
 

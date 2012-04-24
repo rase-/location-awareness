@@ -2,10 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package wad.spring.domain;
+package form;
 
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import wad.spring.domain.User;
 
 /**
  *

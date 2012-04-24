@@ -24,7 +24,6 @@ public class Role implements Serializable {
             if (role.getRolename().equals(this.rolename)) {
                 return true;
             }
-            return false;
         }
         return false;
     }

@@ -115,6 +115,11 @@ public class User implements Serializable {
     public void setReceivedFriendRequests(List<FriendshipRequest> receivedFriendRequests) {
         this.receivedFriendRequests = receivedFriendRequests;
     }
+    public boolean isAdmin() {
+        Role role = new Role();
+        role.setRolename("admin");
+        return this.roles.contains(role);
+    }
     
     
 }

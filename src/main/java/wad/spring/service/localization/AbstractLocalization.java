@@ -15,6 +15,8 @@ import wad.spring.domain.Place;
  * @author tonykovanen
  */
 public abstract class AbstractLocalization implements Localization {
+    
+    @Override
     public abstract Place localize(List<Place> places, List<Fingerprint> userPrints);
     
     protected abstract double calculateError(List<HyperbolicFingerprint> userPrints, List<HyperbolicFingerprint> referencePrints);

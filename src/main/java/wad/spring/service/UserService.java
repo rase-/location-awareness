@@ -8,7 +8,7 @@ import java.util.List;
 import wad.spring.domain.FriendshipRequest;
 import form.MeasurementForm;
 import wad.spring.domain.User;
-import wad.spring.domain.UserForm;
+import form.UserForm;
 
 /**
  * Operations defined for users
@@ -67,5 +67,16 @@ public interface UserService {
      * @param userForm Data of new user
      */
     void register(UserForm userForm);
+    /**
+     * Deletes selected user or the user himself
+     * @param userId Id of user to be deleted
+     * @param username Id of invoking user
+     */
+    void deleteUser(Long userId, String username);
+    /**
+     * Promote user as admin
+     * @param userId Id of user to be promoted
+     */
+    void promoteAdmin(Long userId);
     
 }

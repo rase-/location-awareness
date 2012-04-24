@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import wad.spring.domain.Measurement;
 import form.MeasurementForm;
 import wad.spring.domain.Place;
+import wad.spring.domain.User;
 import wad.spring.service.MeasurementService;
 import wad.spring.service.PlaceService;
 import wad.spring.service.UserService;
@@ -240,5 +241,30 @@ public class AdminController {
         InputStream is = new StringBufferInputStream(placeService.transformDataToText(place));
         IOUtils.copy(is, response.getOutputStream());
         response.flushBuffer();
+    }
+    
+    @RequestMapping("users")
+    public String showAllUsers(Model model) {
+        model.addAttribute("users", userService.findAll());
+        return "admin/users";
+    }
+    
+    @RequestMapping("users/{userId}")
+    public String showUserInformation(@PathVariable Long userId, Model model) {
+        User user = userService.findOne(userId);
+        model.addAttribute("user", user);
+        return "admin/user";
+    }
+    
+    @RequestMapping(value = "users/{userId}", method = RequestMethod.DELETE)
+    public String deleteUser(@PathVariable Long userId, Principal principal) {
+        userService.deleteUser(userId, principal.getName());
+        return "redirect:/admin/users";
+    }
+    
+    @RequestMapping(value = "users/{userId}", method = RequestMethod.POST)
+    public String promoteUserAdminPrivilidges(@PathVariable Long userId) {
+        userService.promoteAdmin(userId);
+        return "redirect:/admin/users/" + userId;
     }
 }
