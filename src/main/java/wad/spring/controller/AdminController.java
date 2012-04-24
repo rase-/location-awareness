@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import wad.spring.domain.Measurement;
-import wad.spring.domain.MeasurementForm;
+import form.MeasurementForm;
 import wad.spring.domain.Place;
 import wad.spring.service.MeasurementService;
 import wad.spring.service.PlaceService;

@@ -6,7 +6,7 @@ package wad.spring.service;
 
 import java.util.List;
 import wad.spring.domain.FriendshipRequest;
-import wad.spring.domain.MeasurementForm;
+import form.MeasurementForm;
 import wad.spring.domain.User;
 import wad.spring.domain.UserForm;
 

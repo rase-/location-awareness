@@ -5,7 +5,7 @@
 package wad.spring.service;
 
 import java.util.List;
-import wad.spring.domain.MeasurementForm;
+import form.MeasurementForm;
 import wad.spring.domain.Place;
 
 /**

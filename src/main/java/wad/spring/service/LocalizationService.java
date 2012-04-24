@@ -4,7 +4,7 @@
  */
 package wad.spring.service;
 
-import wad.spring.domain.MeasurementForm;
+import form.MeasurementForm;
 
 /**
  * Used to localize user by different means

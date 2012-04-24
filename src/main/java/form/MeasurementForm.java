@@ -2,12 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package wad.spring.domain;
+package form;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import wad.spring.domain.Fingerprint;
 
 /**
  * A form object that is used to obtain form data and parse it to make fingerprints

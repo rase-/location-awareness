@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package wad.spring.localization;
+package wad.spring.service.localization;
 
 import java.util.List;
 import wad.spring.domain.Fingerprint;

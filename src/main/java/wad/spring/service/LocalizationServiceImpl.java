@@ -4,14 +4,16 @@
  */
 package wad.spring.service;
 
+import form.LocalizationType;
+import form.MeasurementForm;
 import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import wad.spring.domain.*;
-import wad.spring.localization.*;
 import wad.spring.repository.PlaceRepository;
 import wad.spring.repository.UserRepository;
+import wad.spring.service.localization.*;
 
 /**
  *

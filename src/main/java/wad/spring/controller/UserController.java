@@ -4,6 +4,7 @@
  */
 package wad.spring.controller;
 
+import form.MeasurementForm;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
