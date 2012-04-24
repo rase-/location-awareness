@@ -85,11 +85,7 @@ public class UserController {
 
 
         }
-        if (measurementform.getType().equals(LocalizationType.ByBestError)) {
-            localizationService.localizeByBestError(principal.getName(), measurementform);
-        } else {
-            localizationService.localizeByErrorAverage(principal.getName(), measurementform);
-        }
+        localizationService.localize(principal.getName(), measurementform);
         return "redirect:/user/history";
     }
 
