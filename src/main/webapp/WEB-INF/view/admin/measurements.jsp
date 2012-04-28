@@ -8,6 +8,13 @@
         <title>Measurement management page</title>
     </head>
     <body>
+        <nav>
+            <a href=<c:url value="/home" />>Site Home</a>
+            <a href=<c:url value="/admin/home" />>Admin Home</a>
+            <a href=<c:url value="/admin/places" />>Places</a>
+            <a href=<c:url value="/admin/users" />>Users</a>
+            <a href=<c:url value="/j_spring_security_logout" />>Logout</a>
+        </nav>
         <h1>${place.name} measurements</h1>
         <h2>Add a new measurement</h2>
         <p><a href=<c:url value="/admin/places/${place.id}/measurements/file" />>Download measurements as txt file</a> </p>

@@ -8,6 +8,13 @@
         <title>Place information</title>
     </head>
     <body>
+        <nav>
+            <a href=<c:url value="/home" />>Site Home</a>
+            <a href=<c:url value="/admin/home" />>Admin Home</a>
+            <a href=<c:url value="/admin/places" />>Places</a>
+            <a href=<c:url value="/admin/users" />>Users</a>
+            <a href=<c:url value="/j_spring_security_logout" />>Logout</a>
+        </nav>
         <h1>${place.name}</h1>
         <p><a href=<c:url value="/admin/places/${place.id}/measurements" />>Manage measurements</a></p>
         <p><a href=<c:url value="/admin/places/${id}/measurements/file" />>Download measurements as txt file</a></p>
