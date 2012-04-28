@@ -187,7 +187,7 @@ public class UserServiceImpl implements UserService {
     }
     
     /**
-     * Deletes user iff both the target and invoking user are not the same (i.e. an admin can not delete himself
+     * Deletes user iff both the target and invoking user are not the same (i.e. an admin can not delete himself)
      * @param userId Id of target user
      * @param username Id of invoking admin
      */
