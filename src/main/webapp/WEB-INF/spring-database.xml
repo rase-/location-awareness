@@ -21,10 +21,10 @@
            http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
     <!-- Sovelluksen repository-luokat (DAO-luokat) sijaitsevat pakkauksen wad alla -->
-    <jpa:repositories base-package="wad.spring.repository" />
+    <jpa:repositories base-package="acs.fluffy.repository" />
     
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="wad.spring.domain"/>
+        <property name="packagesToScan" value="acs.fluffy.domain"/>
         <property name="persistenceUnitName" value="${persistenceUnitName}" /> 
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">

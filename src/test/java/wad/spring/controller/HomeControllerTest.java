@@ -13,7 +13,7 @@ import org.springframework.test.web.server.MockMvc;
 import org.springframework.test.web.server.request.MockMvcRequestBuilders;
 import org.springframework.test.web.server.result.MockMvcResultMatchers;
 import org.springframework.test.web.server.setup.MockMvcBuilders;
-import form.UserForm;
+import acs.fluffy.form.UserForm;
 
 /**
  *
