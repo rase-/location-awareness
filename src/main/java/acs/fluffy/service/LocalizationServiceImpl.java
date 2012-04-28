@@ -32,9 +32,9 @@ import acs.fluffy.repository.UserRepository;
 public class LocalizationServiceImpl implements LocalizationService {
     private EnumMap<LocalizationType, Localization> localizationAlgorithms = new EnumMap<LocalizationType, Localization>(LocalizationType.class);
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
     @Autowired
-    PlaceRepository placeRepository;
+    private PlaceRepository placeRepository;
     
     public LocalizationServiceImpl() {
         localizationAlgorithms.put(LocalizationType.ByBestError, new ByBestError());

@@ -24,6 +24,6 @@
     
     <!-- käyttäjät kannasta -->
     <authentication-manager>
-        <authentication-provider user-service-ref="wadUserDetailsService" />
+        <authentication-provider user-service-ref="acsUserDetailsService" />
     </authentication-manager>
 </beans:beans>

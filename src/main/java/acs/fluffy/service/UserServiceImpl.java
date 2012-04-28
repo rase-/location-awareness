@@ -65,13 +65,6 @@ public class UserServiceImpl implements UserService {
     public void sendOrAcceptFriendRequestByNameToById(String username, Long id) {
         User addingUser = userRepository.findByUsername(username);
         User addedUser = userRepository.findOne(id);
-
-//        if (!addingUser.getFriends().contains(addedUser)) {
-//            addingUser.getFriends().add(addedUser);
-//        }
-//        if (!addedUser.getFriends().contains(addingUser)) {
-//            addedUser.getFriends().add(addingUser);
-//        }
         
         // Checks if the sending user has received a request from target user, if so then friendship is established
         for (FriendshipRequest f : addingUser.getReceivedFriendRequests()) {

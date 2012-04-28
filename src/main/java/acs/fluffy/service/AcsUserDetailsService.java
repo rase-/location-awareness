@@ -19,7 +19,7 @@ import acs.fluffy.repository.UserRepository;
  * @author tonykovanen
  */
 @Service
-public class WadUserDetailsService implements UserDetailsService {
+public class AcsUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
