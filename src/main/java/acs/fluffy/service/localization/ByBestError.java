@@ -12,11 +12,16 @@ import acs.fluffy.domain.Measurement;
 import acs.fluffy.domain.Place;
 
 /**
- *
+ * Command object used to position user by smallest error
  * @author tonykovanen
  */
 public class ByBestError extends AbstractLocalization {
-
+    /**
+     * Localizes user by finding place that best matches user's prints (smallest error) and returns the place it belongs to
+     * @param places Places to be matched
+     * @param userPrints Fingerprints of user to be matched
+     * @return The "closest" place
+     */
     @Override
     public Place localize(List<Place> places, List<Fingerprint> userPrints) {
         double smallestError = Double.MAX_VALUE;
@@ -37,7 +42,12 @@ public class ByBestError extends AbstractLocalization {
         return leastErraneousPlace;
     }
 
-    // Error function is euclidean distance
+    /**
+     * Calculates the Euclidean distance between two lists of hyperbolic fingerprints (matched)
+     * @param userPrints Prints of user
+     * @param referencePrints Prints from database
+     * @return Euclidean distance
+     */
     @Override
     protected double calculateError(List<HyperbolicFingerprint> userPrints, List<HyperbolicFingerprint> referencePrints) {
         double sum = 0;

@@ -41,6 +41,11 @@ public class LocalizationServiceImpl implements LocalizationService {
         localizationAlgorithms.put(LocalizationType.ByErrorAverage, new ByErrorAverage());
     }
     
+    /**
+     * Localizes user by selected localization measure by selecting a proper localization command object and adding closest place to user's history
+     * @param username Username of user to be localized
+     * @param measurementform Measurement form containing user's Fingerprint data and selected localization measure
+     */
     @Override
     @Transactional
     public void localize(String username, MeasurementForm measurementform) {

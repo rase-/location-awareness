@@ -10,11 +10,17 @@ import acs.fluffy.domain.Measurement;
 import acs.fluffy.domain.Place;
 
 /**
- *
+ * Command object used to position user by average of place's errors
  * @author tonykovanen
  */
 public class ByErrorAverage extends ByBestError {
     
+    /**
+     * Calculates error average of all measurements in a place and selects the place with smallest average as closest
+     * @param places Places to be matched
+     * @param userPrints Fingerprints of user
+     * @return Closest place
+     */
     @Override
     public Place localize(List<Place> places, List<Fingerprint> userPrints) {
         double smallestError = Double.MAX_VALUE;

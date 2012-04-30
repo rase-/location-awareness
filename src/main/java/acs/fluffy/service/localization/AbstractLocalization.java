@@ -11,16 +11,29 @@ import acs.fluffy.domain.HyperbolicFingerprint;
 import acs.fluffy.domain.Place;
 
 /**
- *
+ * Abstract tool class for Hyperbolic prints matching command objects
  * @author tonykovanen
  */
 public abstract class AbstractLocalization implements Localization {
-    
+    /**
+     * Localizes user by measurements and received place list
+     */
     @Override
     public abstract Place localize(List<Place> places, List<Fingerprint> userPrints);
     
+    /**
+     * Calculates error according to hyperbolic user prints and reference
+     * @param userPrints User prints
+     * @param referencePrints Reference prints
+     * @return The calculated errro
+     */
     protected abstract double calculateError(List<HyperbolicFingerprint> userPrints, List<HyperbolicFingerprint> referencePrints);
     
+    /**
+     * Makes fingerprints hyperbolic by taking each unique pair of fingerprints in the list and tranforming them to hyperbolic prints
+     * @param regular Regular prints
+     * @return Hyperbolic prints
+     */
     protected List<HyperbolicFingerprint> makeHyperbolic(List<Fingerprint> regular) {
         ArrayList<HyperbolicFingerprint> hyperbolic = new ArrayList<HyperbolicFingerprint>();
         for (int i = 1; i < regular.size(); i++) {
@@ -32,6 +45,12 @@ public abstract class AbstractLocalization implements Localization {
         return hyperbolic;
     }
     
+    /**
+     * Matches two sets of prints to contain all missing mac addresses with default value -100 and returns the error between them
+     * @param userPrints Prints of user
+     * @param databasePrints Prints from database
+     * @return 
+     */
     protected double matchPrintsAndMakeHyperbolicAndCalculateError(List<Fingerprint> userPrints, List<Fingerprint> databasePrints) {
         int i = 0;
         int j = 0;
