@@ -4,7 +4,6 @@
  */
 package acs.fluffy.service.localization;
 
-import java.util.ArrayList;
 import java.util.List;
 import acs.fluffy.domain.Fingerprint;
 import acs.fluffy.domain.HyperbolicFingerprint;
