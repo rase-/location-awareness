@@ -117,7 +117,7 @@ public class AdminController {
      * @param edit Edited Place object
      * @param result Result object of validation
      * @param placeId Id of the place that was changed
-     * @param model Object which enables tranferring attributes from controller to view
+     * @param model Object which enables transferring attributes from controller to view
      * @return Redirects to admin/places
      */
     @RequestMapping(value = "places/{placeId}", method = RequestMethod.POST)
@@ -127,6 +127,10 @@ public class AdminController {
             return "admin/place";
         }
         Place nonEdited = placeService.findOne(placeId);
+        if (!edit.getName().equals(nonEdited.getName()) && placeService.findByName(edit.getName()) != null) {
+            model.addAttribute("message", "Specified placename already exists");
+            return "troubleshooting";
+        }
         nonEdited.setName(edit.getName());
         nonEdited.setDescription(edit.getDescription());
         placeService.save(nonEdited);
