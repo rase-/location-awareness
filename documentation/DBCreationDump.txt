@@ -1,0 +1,920 @@
+INFO: [EL Config]: 2012-05-05 13:16:38.028--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.FriendshipRequest] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.442--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field sender] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.57--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.Role] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.601--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field users] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.603--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.Place] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.607--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field measurements] is being defaulted to: class acs.fluffy.domain.Measurement.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.608--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.Measurement] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.61--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field place] is being defaulted to: class acs.fluffy.domain.Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.613--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.HistoryOccurrence] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.613--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field place] is being defaulted to: class acs.fluffy.domain.Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.614--ServerSession(33133279)--Thread(Thread[main,5,main])--The access type for the persistent class [class acs.fluffy.domain.User] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:38.614--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field history] is being defaulted to: class acs.fluffy.domain.HistoryOccurrence.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.615--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field friends] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.616--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field roles] is being defaulted to: class acs.fluffy.domain.Role.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.616--ServerSession(33133279)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field receivedFriendRequests] is being defaulted to: class acs.fluffy.domain.FriendshipRequest.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.617--ServerSession(33133279)--Thread(Thread[main,5,main])--The alias name for the entity class [class acs.fluffy.domain.FriendshipRequest] is being defaulted to: FriendshipRequest.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.629--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.FriendshipRequest] is being defaulted to: FRIENDSHIPREQUEST.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.688--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.69--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.Role] is being defaulted to: ROLES.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.727--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.728--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [rolename] is being defaulted to: ROLENAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.729--ServerSession(33133279)--Thread(Thread[main,5,main])--The alias name for the entity class [class acs.fluffy.domain.Place] is being defaulted to: Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.729--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.Place] is being defaulted to: PLACE.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.733--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.734--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [description] is being defaulted to: DESCRIPTION.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.735--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.736--ServerSession(33133279)--Thread(Thread[main,5,main])--The alias name for the entity class [class acs.fluffy.domain.Measurement] is being defaulted to: Measurement.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.736--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.Measurement] is being defaulted to: MEASUREMENT.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.737--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.738--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [fingerprints] is being defaulted to: FINGERPRINTS.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.743--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [measureTime] is being defaulted to: MEASURETIME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.757--ServerSession(33133279)--Thread(Thread[main,5,main])--The alias name for the entity class [class acs.fluffy.domain.HistoryOccurrence] is being defaulted to: HistoryOccurrence.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.758--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.HistoryOccurrence] is being defaulted to: HISTORYOCCURRENCE.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.759--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.759--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [measureTime] is being defaulted to: MEASURETIME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.76--ServerSession(33133279)--Thread(Thread[main,5,main])--The table name for entity [class acs.fluffy.domain.User] is being defaulted to: USERS.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.761--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.762--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [username] is being defaulted to: USERNAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.762--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [name] is being defaulted to: NAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.763--ServerSession(33133279)--Thread(Thread[main,5,main])--The column name for element [password] is being defaulted to: PASSWORD.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.856--ServerSession(33133279)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field place] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.866--ServerSession(33133279)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [place] is being defaulted to: PLACE_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.867--ServerSession(33133279)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field sender] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.868--ServerSession(33133279)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [sender] is being defaulted to: SENDER_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.902--ServerSession(33133279)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_HISTORYOCCURRENCE.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.916--ServerSession(33133279)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field history] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.917--ServerSession(33133279)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [history] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.918--ServerSession(33133279)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field history] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.92--ServerSession(33133279)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [history] is being defaulted to: history_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.92--ServerSession(33133279)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_USERS.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.921--ServerSession(33133279)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field friends] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.922--ServerSession(33133279)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [friends] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.922--ServerSession(33133279)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field friends] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.926--ServerSession(33133279)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [friends] is being defaulted to: friends_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.936--ServerSession(33133279)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field place] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.937--ServerSession(33133279)--Thread(Thread[main,5,main])--The foreign key column name for the mapping element [place] is being defaulted to: PLACE_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.939--ServerSession(33133279)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_FRIENDSHIPREQUEST.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.94--ServerSession(33133279)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field receivedFriendRequests] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.944--ServerSession(33133279)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [receivedFriendRequests] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.958--ServerSession(33133279)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field receivedFriendRequests] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.961--ServerSession(33133279)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [receivedFriendRequests] is being defaulted to: receivedFriendRequests_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.961--ServerSession(33133279)--Thread(Thread[main,5,main])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_ROLES.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.962--ServerSession(33133279)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field roles] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.975--ServerSession(33133279)--Thread(Thread[main,5,main])--The source foreign key column name for the many to many mapping [roles] is being defaulted to: users_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.976--ServerSession(33133279)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field roles] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:38.976--ServerSession(33133279)--Thread(Thread[main,5,main])--The target foreign key column name for the many to many mapping [roles] is being defaulted to: roles_ID.
+
+INFO: Hibernate Validator 4.1.0.Final
+INFO: Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+INFO: [EL Info]: 2012-05-05 13:16:40.295--ServerSession(33133279)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 2.3.0.v20110604-r9504
+
+INFO: [EL Fine]: 2012-05-05 13:16:40.791--Thread(Thread[main,5,main])--Detected Vendor platform: org.eclipse.persistence.platform.database.HSQLPlatform
+
+INFO: [EL Config]: 2012-05-05 13:16:40.949--ServerSession(33133279)--Connection(28052805)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>HSQLPlatform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+
+INFO: [EL Config]: 2012-05-05 13:16:40.953--ServerSession(33133279)--Connection(10174812)--Thread(Thread[main,5,main])--Connected: jdbc:hsqldb:mem:dataSource
+	User: SA
+	Database: HSQL Database Engine  Version: 1.8.0
+	Driver: HSQL Database Engine Driver  Version: 1.8.0
+
+INFO: [EL Config]: 2012-05-05 13:16:40.954--ServerSession(33133279)--Connection(14681992)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=>HSQLPlatform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+
+INFO: [EL Config]: 2012-05-05 13:16:40.956--ServerSession(33133279)--Connection(955134)--Thread(Thread[main,5,main])--Connected: jdbc:hsqldb:mem:dataSource
+	User: SA
+	Database: HSQL Database Engine  Version: 1.8.0
+	Driver: HSQL Database Engine Driver  Version: 1.8.0
+
+INFO: [EL Info]: 2012-05-05 13:16:41.139--ServerSession(33133279)--Thread(Thread[main,5,main])--file:/Users/tonykovanen/location_awareness/location-awareness/target/fluffy-1.0-SNAPSHOT/WEB-INF/classes/_persistenceUnitDev login successful
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.234--ServerSession(33133279)--Connection(5019879)--Thread(Thread[main,5,main])--ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.251--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.262--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: MEASUREMENT in statement [ALTER TABLE MEASUREMENT]
+Error Code: -22
+Call: ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID
+Query: DataModifyQuery(sql="ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.266--ServerSession(33133279)--Connection(4310099)--Thread(Thread[main,5,main])--ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.267--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.268--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: HISTORYOCCURRENCE in statement [ALTER TABLE HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID
+Query: DataModifyQuery(sql="ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.269--ServerSession(33133279)--Connection(29377023)--Thread(Thread[main,5,main])--ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.269--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.27--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: FRIENDSHIPREQUEST in statement [ALTER TABLE FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID
+Query: DataModifyQuery(sql="ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.271--ServerSession(33133279)--Connection(26907556)--Thread(Thread[main,5,main])--ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.271--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.272--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [ALTER TABLE USERS_USERS]
+Error Code: -22
+Call: ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.272--ServerSession(33133279)--Connection(21374724)--Thread(Thread[main,5,main])--ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.273--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.274--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [ALTER TABLE USERS_USERS]
+Error Code: -22
+Call: ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.274--ServerSession(33133279)--Connection(11244008)--Thread(Thread[main,5,main])--ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.275--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.276--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [ALTER TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.276--ServerSession(33133279)--Connection(33044618)--Thread(Thread[main,5,main])--ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.277--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.285--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [ALTER TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.286--ServerSession(33133279)--Connection(10017567)--Thread(Thread[main,5,main])--ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.286--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.287--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [ALTER TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.288--ServerSession(33133279)--Connection(22674070)--Thread(Thread[main,5,main])--ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.289--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.29--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [ALTER TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.291--ServerSession(33133279)--Connection(5416746)--Thread(Thread[main,5,main])--ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.293--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.294--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [ALTER TABLE USERS_ROLES]
+Error Code: -22
+Call: ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.295--ServerSession(33133279)--Connection(20101141)--Thread(Thread[main,5,main])--ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.296--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.297--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [ALTER TABLE USERS_ROLES]
+Error Code: -22
+Call: ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.297--ServerSession(33133279)--Connection(13857406)--Thread(Thread[main,5,main])--DROP TABLE PLACE
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.309--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.31--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: PLACE in statement [DROP TABLE PLACE]
+Error Code: -22
+Call: DROP TABLE PLACE
+Query: DataModifyQuery(sql="DROP TABLE PLACE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.312--ServerSession(33133279)--Connection(5504019)--Thread(Thread[main,5,main])--CREATE TABLE PLACE (ID BIGINT NOT NULL, DESCRIPTION VARCHAR(255), NAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.317--ServerSession(33133279)--Connection(777670)--Thread(Thread[main,5,main])--DROP TABLE MEASUREMENT
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.318--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.319--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: MEASUREMENT in statement [DROP TABLE MEASUREMENT]
+Error Code: -22
+Call: DROP TABLE MEASUREMENT
+Query: DataModifyQuery(sql="DROP TABLE MEASUREMENT")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.364--ServerSession(33133279)--Connection(17625648)--Thread(Thread[main,5,main])--CREATE TABLE MEASUREMENT (ID BIGINT NOT NULL, FINGERPRINTS LONGVARBINARY, MEASURETIME TIMESTAMP, PLACE_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.368--ServerSession(33133279)--Connection(15741690)--Thread(Thread[main,5,main])--DROP TABLE USERS
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.37--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.37--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS in statement [DROP TABLE USERS]
+Error Code: -22
+Call: DROP TABLE USERS
+Query: DataModifyQuery(sql="DROP TABLE USERS")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.371--ServerSession(33133279)--Connection(27458609)--Thread(Thread[main,5,main])--CREATE TABLE USERS (ID BIGINT NOT NULL, NAME VARCHAR(255), PASSWORD VARCHAR(255), USERNAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.372--ServerSession(33133279)--Connection(22748098)--Thread(Thread[main,5,main])--DROP TABLE ROLES
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.373--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.374--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: ROLES in statement [DROP TABLE ROLES]
+Error Code: -22
+Call: DROP TABLE ROLES
+Query: DataModifyQuery(sql="DROP TABLE ROLES")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.374--ServerSession(33133279)--Connection(8092409)--Thread(Thread[main,5,main])--CREATE TABLE ROLES (ID BIGINT NOT NULL, ROLENAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.375--ServerSession(33133279)--Connection(13006805)--Thread(Thread[main,5,main])--DROP TABLE HISTORYOCCURRENCE
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.383--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.384--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: HISTORYOCCURRENCE in statement [DROP TABLE HISTORYOCCURRENCE]
+Error Code: -22
+Call: DROP TABLE HISTORYOCCURRENCE
+Query: DataModifyQuery(sql="DROP TABLE HISTORYOCCURRENCE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.385--ServerSession(33133279)--Connection(31818233)--Thread(Thread[main,5,main])--CREATE TABLE HISTORYOCCURRENCE (ID BIGINT NOT NULL, MEASURETIME TIMESTAMP, PLACE_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.386--ServerSession(33133279)--Connection(12062384)--Thread(Thread[main,5,main])--DROP TABLE FRIENDSHIPREQUEST
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.389--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.39--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: FRIENDSHIPREQUEST in statement [DROP TABLE FRIENDSHIPREQUEST]
+Error Code: -22
+Call: DROP TABLE FRIENDSHIPREQUEST
+Query: DataModifyQuery(sql="DROP TABLE FRIENDSHIPREQUEST")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.395--ServerSession(33133279)--Connection(30176350)--Thread(Thread[main,5,main])--CREATE TABLE FRIENDSHIPREQUEST (ID BIGINT NOT NULL, SENDER_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.399--ServerSession(33133279)--Connection(29477518)--Thread(Thread[main,5,main])--DROP TABLE USERS_USERS
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.4--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.4--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [DROP TABLE USERS_USERS]
+Error Code: -22
+Call: DROP TABLE USERS_USERS
+Query: DataModifyQuery(sql="DROP TABLE USERS_USERS")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.401--ServerSession(33133279)--Connection(31011996)--Thread(Thread[main,5,main])--CREATE TABLE USERS_USERS (USERS_ID BIGINT NOT NULL, friends_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, friends_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.402--ServerSession(33133279)--Connection(17633424)--Thread(Thread[main,5,main])--DROP TABLE USERS_HISTORYOCCURRENCE
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.402--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.403--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [DROP TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: DROP TABLE USERS_HISTORYOCCURRENCE
+Query: DataModifyQuery(sql="DROP TABLE USERS_HISTORYOCCURRENCE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.405--ServerSession(33133279)--Connection(12227537)--Thread(Thread[main,5,main])--CREATE TABLE USERS_HISTORYOCCURRENCE (USERS_ID BIGINT NOT NULL, history_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, history_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.411--ServerSession(33133279)--Connection(15333782)--Thread(Thread[main,5,main])--DROP TABLE USERS_FRIENDSHIPREQUEST
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.413--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.414--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [DROP TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: DROP TABLE USERS_FRIENDSHIPREQUEST
+Query: DataModifyQuery(sql="DROP TABLE USERS_FRIENDSHIPREQUEST")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.415--ServerSession(33133279)--Connection(16848776)--Thread(Thread[main,5,main])--CREATE TABLE USERS_FRIENDSHIPREQUEST (USERS_ID BIGINT NOT NULL, receivedFriendRequests_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, receivedFriendRequests_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.415--ServerSession(33133279)--Connection(11537482)--Thread(Thread[main,5,main])--DROP TABLE USERS_ROLES
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.416--ServerSession(33133279)--Thread(Thread[main,5,main])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:41.417--ServerSession(33133279)--Thread(Thread[main,5,main])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [DROP TABLE USERS_ROLES]
+Error Code: -22
+Call: DROP TABLE USERS_ROLES
+Query: DataModifyQuery(sql="DROP TABLE USERS_ROLES")
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.417--ServerSession(33133279)--Connection(11288468)--Thread(Thread[main,5,main])--CREATE TABLE USERS_ROLES (users_ID BIGINT NOT NULL, roles_ID BIGINT NOT NULL, PRIMARY KEY (users_ID, roles_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.419--ServerSession(33133279)--Connection(8528488)--Thread(Thread[main,5,main])--ALTER TABLE PLACE ADD CONSTRAINT UNQ_PLACE_2 UNIQUE (NAME)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.432--ServerSession(33133279)--Connection(27373743)--Thread(Thread[main,5,main])--ALTER TABLE USERS ADD CONSTRAINT UNQ_USERS_3 UNIQUE (USERNAME)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.434--ServerSession(33133279)--Connection(5684814)--Thread(Thread[main,5,main])--ALTER TABLE MEASUREMENT ADD CONSTRAINT FK_MEASUREMENT_PLACE_ID FOREIGN KEY (PLACE_ID) REFERENCES PLACE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.435--ServerSession(33133279)--Connection(15210229)--Thread(Thread[main,5,main])--ALTER TABLE HISTORYOCCURRENCE ADD CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID FOREIGN KEY (PLACE_ID) REFERENCES PLACE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.436--ServerSession(33133279)--Connection(4961752)--Thread(Thread[main,5,main])--ALTER TABLE FRIENDSHIPREQUEST ADD CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID FOREIGN KEY (SENDER_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.437--ServerSession(33133279)--Connection(9415775)--Thread(Thread[main,5,main])--ALTER TABLE USERS_USERS ADD CONSTRAINT FK_USERS_USERS_friends_ID FOREIGN KEY (friends_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.438--ServerSession(33133279)--Connection(8244418)--Thread(Thread[main,5,main])--ALTER TABLE USERS_USERS ADD CONSTRAINT FK_USERS_USERS_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.439--ServerSession(33133279)--Connection(17684187)--Thread(Thread[main,5,main])--ALTER TABLE USERS_HISTORYOCCURRENCE ADD CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID FOREIGN KEY (history_ID) REFERENCES HISTORYOCCURRENCE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.44--ServerSession(33133279)--Connection(26539166)--Thread(Thread[main,5,main])--ALTER TABLE USERS_HISTORYOCCURRENCE ADD CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.441--ServerSession(33133279)--Connection(4699118)--Thread(Thread[main,5,main])--ALTER TABLE USERS_FRIENDSHIPREQUEST ADD CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID FOREIGN KEY (receivedFriendRequests_ID) REFERENCES FRIENDSHIPREQUEST (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.445--ServerSession(33133279)--Connection(25449483)--Thread(Thread[main,5,main])--ALTER TABLE USERS_FRIENDSHIPREQUEST ADD CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.446--ServerSession(33133279)--Connection(11122316)--Thread(Thread[main,5,main])--ALTER TABLE USERS_ROLES ADD CONSTRAINT FK_USERS_ROLES_users_ID FOREIGN KEY (users_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.447--ServerSession(33133279)--Connection(1027578)--Thread(Thread[main,5,main])--ALTER TABLE USERS_ROLES ADD CONSTRAINT FK_USERS_ROLES_roles_ID FOREIGN KEY (roles_ID) REFERENCES ROLES (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.448--ServerSession(33133279)--Connection(20478341)--Thread(Thread[main,5,main])--CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT NUMERIC(38), PRIMARY KEY (SEQ_NAME))
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.449--ServerSession(33133279)--Connection(12076906)--Thread(Thread[main,5,main])--DELETE FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN_TABLE
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.453--ServerSession(33133279)--Connection(29897499)--Thread(Thread[main,5,main])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN_TABLE
+
+INFO: [EL Fine]: 2012-05-05 13:16:41.475--ServerSession(33133279)--Connection(16787101)--Thread(Thread[main,5,main])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values (SEQ_GEN_TABLE, 0)
+
+INFO: Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+INFO: WEB0671: Loading application [acs_fluffy_war_1.0-SNAPSHOT] at [/location-awareness]
+INFO: CORE10010: Loading application acs_fluffy_war_1.0-SNAPSHOT done in 32,899 ms
+INFO: GlassFish Server Open Source Edition 3.1.1 (12) startup time : Felix (11,698ms), startup services(38,263ms), total(49,961ms)
+INFO: Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+INFO: WEB0169: Created HTTP listener [http-listener-1] on host/port [0.0.0.0:8080]
+INFO: Grizzly Framework 1.9.36 started in: 45ms - bound to [0.0.0.0:8080]
+INFO: JMXStartupService: Started JMXConnector, JMXService URL = service:jmx:rmi://192.168.0.103:8686/jndi/rmi://192.168.0.103:8686/jmxrmi
+INFO: WEB0169: Created HTTP listener [http-listener-2] on host/port [0.0.0.0:8181]
+INFO: Grizzly Framework 1.9.36 started in: 4ms - bound to [0.0.0.0:8181]
+INFO: PWC1412: WebModule[null] ServletContext.log():Closing Spring root WebApplicationContext
+INFO: [EL Config]: 2012-05-05 13:16:48.619--ServerSession(33133279)--Connection(13691289)--Thread(Thread[admin-thread-pool-4848(5),5,grizzly-kernel])--disconnect
+
+INFO: [EL Info]: 2012-05-05 13:16:48.651--ServerSession(33133279)--Thread(Thread[admin-thread-pool-4848(5),5,grizzly-kernel])--file:/Users/tonykovanen/location_awareness/location-awareness/target/fluffy-1.0-SNAPSHOT/WEB-INF/classes/_persistenceUnitDev logout successful
+
+SEVERE: log4j:ERROR log4j called after unloading, see http://logging.apache.org/log4j/1.2/faq.html#unload.
+SEVERE: java.lang.IllegalStateException: Class invariant violation
+	at org.apache.log4j.LogManager.getLoggerRepository(LogManager.java:199)
+	at org.apache.log4j.LogManager.getLogger(LogManager.java:228)
+	at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:73)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:242)
+	at org.apache.commons.logging.impl.SLF4JLogFactory.getInstance(SLF4JLogFactory.java:156)
+	at org.apache.commons.logging.impl.SLF4JLogFactory.getInstance(SLF4JLogFactory.java:132)
+	at org.apache.commons.logging.LogFactory.getLog(LogFactory.java:685)
+	at org.springframework.security.access.expression.method.MethodSecurityEvaluationContext.<clinit>(MethodSecurityEvaluationContext.java:24)
+	at sun.misc.Unsafe.ensureClassInitialized(Native Method)
+	at sun.reflect.UnsafeFieldAccessorFactory.newFieldAccessor(UnsafeFieldAccessorFactory.java:25)
+	at sun.reflect.ReflectionFactory.newFieldAccessor(ReflectionFactory.java:122)
+	at java.lang.reflect.Field.acquireFieldAccessor(Field.java:918)
+	at java.lang.reflect.Field.getFieldAccessor(Field.java:899)
+	at java.lang.reflect.Field.get(Field.java:358)
+	at org.glassfish.web.loader.WebappClassLoader.clearReferences(WebappClassLoader.java:1836)
+	at org.glassfish.web.loader.WebappClassLoader.stop(WebappClassLoader.java:1665)
+	at org.glassfish.web.loader.WebappClassLoader.preDestroy(WebappClassLoader.java:1634)
+	at org.glassfish.internal.data.ApplicationInfo.unload(ApplicationInfo.java:355)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.unload(ApplicationLifecycle.java:1000)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.undeploy(ApplicationLifecycle.java:1025)
+	at org.glassfish.deployment.admin.UndeployCommand.execute(UndeployCommand.java:330)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$1.execute(CommandRunnerImpl.java:355)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:370)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.doCommand(CommandRunnerImpl.java:1064)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl.access$1200(CommandRunnerImpl.java:96)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1244)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$ExecutionContext.execute(CommandRunnerImpl.java:1232)
+	at com.sun.enterprise.v3.admin.AdminAdapter.doCommand(AdminAdapter.java:459)
+	at com.sun.enterprise.v3.admin.AdminAdapter.service(AdminAdapter.java:209)
+	at com.sun.grizzly.tcp.http11.GrizzlyAdapter.service(GrizzlyAdapter.java:168)
+	at com.sun.enterprise.v3.server.HK2Dispatcher.dispath(HK2Dispatcher.java:117)
+	at com.sun.enterprise.v3.services.impl.ContainerMapper.service(ContainerMapper.java:238)
+	at com.sun.grizzly.http.ProcessorTask.invokeAdapter(ProcessorTask.java:828)
+	at com.sun.grizzly.http.ProcessorTask.doProcess(ProcessorTask.java:725)
+	at com.sun.grizzly.http.ProcessorTask.process(ProcessorTask.java:1019)
+	at com.sun.grizzly.http.DefaultProtocolFilter.execute(DefaultProtocolFilter.java:225)
+	at com.sun.grizzly.DefaultProtocolChain.executeProtocolFilter(DefaultProtocolChain.java:137)
+	at com.sun.grizzly.DefaultProtocolChain.execute(DefaultProtocolChain.java:104)
+	at com.sun.grizzly.DefaultProtocolChain.execute(DefaultProtocolChain.java:90)
+	at com.sun.grizzly.http.HttpProtocolChain.execute(HttpProtocolChain.java:79)
+	at com.sun.grizzly.ProtocolChainContextTask.doCall(ProtocolChainContextTask.java:54)
+	at com.sun.grizzly.SelectionKeyContextTask.call(SelectionKeyContextTask.java:59)
+	at com.sun.grizzly.ContextTask.run(ContextTask.java:71)
+	at com.sun.grizzly.util.AbstractThreadPool$Worker.doWork(AbstractThreadPool.java:532)
+	at com.sun.grizzly.util.AbstractThreadPool$Worker.run(AbstractThreadPool.java:513)
+	at java.lang.Thread.run(Thread.java:680)
+
+INFO: PWC1412: WebModule[null] ServletContext.log():No Spring WebApplicationInitializer types detected on classpath
+INFO: PWC1412: WebModule[null] ServletContext.log():Initializing Spring root WebApplicationContext
+SEVERE: log4j:WARN No appenders could be found for logger (org.springframework.web.context.ContextLoader).
+SEVERE: log4j:WARN Please initialize the log4j system properly.
+SEVERE: log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+INFO: [EL Config]: 2012-05-05 13:16:57.544--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.FriendshipRequest] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.544--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the many to one mapping element [field sender] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.545--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.Role] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.578--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the many to many mapping element [field users] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.58--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.Place] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.581--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the one to many mapping element [field measurements] is being defaulted to: class acs.fluffy.domain.Measurement.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.582--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.Measurement] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.584--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the many to one mapping element [field place] is being defaulted to: class acs.fluffy.domain.Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.584--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.HistoryOccurrence] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.585--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the one to one mapping element [field place] is being defaulted to: class acs.fluffy.domain.Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.585--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The access type for the persistent class [class acs.fluffy.domain.User] is set to [FIELD].
+
+INFO: [EL Config]: 2012-05-05 13:16:57.586--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the one to many mapping element [field history] is being defaulted to: class acs.fluffy.domain.HistoryOccurrence.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.587--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the one to many mapping element [field friends] is being defaulted to: class acs.fluffy.domain.User.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.587--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the many to many mapping element [field roles] is being defaulted to: class acs.fluffy.domain.Role.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.588--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target entity (reference) class for the one to many mapping element [field receivedFriendRequests] is being defaulted to: class acs.fluffy.domain.FriendshipRequest.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.588--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The alias name for the entity class [class acs.fluffy.domain.FriendshipRequest] is being defaulted to: FriendshipRequest.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.589--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.FriendshipRequest] is being defaulted to: FRIENDSHIPREQUEST.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.589--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.59--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.Role] is being defaulted to: ROLES.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.591--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.591--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [rolename] is being defaulted to: ROLENAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.592--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The alias name for the entity class [class acs.fluffy.domain.Place] is being defaulted to: Place.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.592--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.Place] is being defaulted to: PLACE.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.595--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.599--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [description] is being defaulted to: DESCRIPTION.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.599--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [name] is being defaulted to: NAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.6--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The alias name for the entity class [class acs.fluffy.domain.Measurement] is being defaulted to: Measurement.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.6--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.Measurement] is being defaulted to: MEASUREMENT.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.6--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.601--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [fingerprints] is being defaulted to: FINGERPRINTS.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.601--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [measureTime] is being defaulted to: MEASURETIME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.601--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The alias name for the entity class [class acs.fluffy.domain.HistoryOccurrence] is being defaulted to: HistoryOccurrence.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.602--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.HistoryOccurrence] is being defaulted to: HISTORYOCCURRENCE.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.602--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.602--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [measureTime] is being defaulted to: MEASURETIME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.603--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The table name for entity [class acs.fluffy.domain.User] is being defaulted to: USERS.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.603--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [id] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.603--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [username] is being defaulted to: USERNAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.604--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [name] is being defaulted to: NAME.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.604--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The column name for element [password] is being defaulted to: PASSWORD.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.604--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The primary key column name for the mapping element [field place] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.605--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The foreign key column name for the mapping element [place] is being defaulted to: PLACE_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.605--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_HISTORYOCCURRENCE.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.605--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source primary key column name for the many to many mapping [field history] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.653--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source foreign key column name for the many to many mapping [history] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.654--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target primary key column name for the many to many mapping [field history] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.654--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target foreign key column name for the many to many mapping [history] is being defaulted to: history_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.656--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The primary key column name for the mapping element [field place] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.656--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The foreign key column name for the mapping element [place] is being defaulted to: PLACE_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.657--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_FRIENDSHIPREQUEST.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.657--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source primary key column name for the many to many mapping [field receivedFriendRequests] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.658--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source foreign key column name for the many to many mapping [receivedFriendRequests] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.658--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target primary key column name for the many to many mapping [field receivedFriendRequests] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.658--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target foreign key column name for the many to many mapping [receivedFriendRequests] is being defaulted to: receivedFriendRequests_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.659--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_ROLES.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.659--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source primary key column name for the many to many mapping [field roles] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.66--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source foreign key column name for the many to many mapping [roles] is being defaulted to: users_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.66--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target primary key column name for the many to many mapping [field roles] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.66--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target foreign key column name for the many to many mapping [roles] is being defaulted to: roles_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.661--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The primary key column name for the mapping element [field sender] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.661--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The foreign key column name for the mapping element [sender] is being defaulted to: SENDER_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.661--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The join table name for the many to many mapping [class acs.fluffy.domain.User] is being defaulted to: USERS_USERS.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.662--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source primary key column name for the many to many mapping [field friends] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.662--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The source foreign key column name for the many to many mapping [friends] is being defaulted to: USERS_ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.662--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target primary key column name for the many to many mapping [field friends] is being defaulted to: ID.
+
+INFO: [EL Config]: 2012-05-05 13:16:57.664--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--The target foreign key column name for the many to many mapping [friends] is being defaulted to: friends_ID.
+
+INFO: Instantiated an instance of org.hibernate.validator.engine.resolver.JPATraversableResolver.
+INFO: [EL Info]: 2012-05-05 13:16:58.694--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--EclipseLink, version: Eclipse Persistence Services - 2.3.0.v20110604-r9504
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.281--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Detected Vendor platform: org.eclipse.persistence.platform.database.HSQLPlatform
+
+INFO: [EL Config]: 2012-05-05 13:16:59.282--ServerSession(22824669)--Connection(5794502)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--connecting(DatabaseLogin(
+	platform=>HSQLPlatform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+
+INFO: [EL Config]: 2012-05-05 13:16:59.284--ServerSession(22824669)--Connection(13242424)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Connected: jdbc:hsqldb:mem:dataSource
+	User: SA
+	Database: HSQL Database Engine  Version: 1.8.0
+	Driver: HSQL Database Engine Driver  Version: 1.8.0
+
+INFO: [EL Config]: 2012-05-05 13:16:59.285--ServerSession(22824669)--Connection(32428298)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--connecting(DatabaseLogin(
+	platform=>HSQLPlatform
+	user name=> ""
+	connector=>JNDIConnector datasource name=>null
+))
+
+INFO: [EL Config]: 2012-05-05 13:16:59.286--ServerSession(22824669)--Connection(31321246)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Connected: jdbc:hsqldb:mem:dataSource
+	User: SA
+	Database: HSQL Database Engine  Version: 1.8.0
+	Driver: HSQL Database Engine Driver  Version: 1.8.0
+
+INFO: [EL Info]: 2012-05-05 13:16:59.295--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--file:/Users/tonykovanen/location_awareness/location-awareness/target/fluffy-1.0-SNAPSHOT/WEB-INF/classes/_persistenceUnitDev login successful
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.302--ServerSession(22824669)--Connection(16579687)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.32--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.324--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: MEASUREMENT in statement [ALTER TABLE MEASUREMENT]
+Error Code: -22
+Call: ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID
+Query: DataModifyQuery(sql="ALTER TABLE MEASUREMENT DROP CONSTRAINT FK_MEASUREMENT_PLACE_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.325--ServerSession(22824669)--Connection(9779929)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.325--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.326--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: HISTORYOCCURRENCE in statement [ALTER TABLE HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID
+Query: DataModifyQuery(sql="ALTER TABLE HISTORYOCCURRENCE DROP CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.327--ServerSession(22824669)--Connection(21661732)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.327--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.328--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: FRIENDSHIPREQUEST in statement [ALTER TABLE FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID
+Query: DataModifyQuery(sql="ALTER TABLE FRIENDSHIPREQUEST DROP CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.328--ServerSession(22824669)--Connection(3146632)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.329--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.33--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [ALTER TABLE USERS_USERS]
+Error Code: -22
+Call: ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_friends_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.331--ServerSession(22824669)--Connection(3670508)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.331--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.332--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [ALTER TABLE USERS_USERS]
+Error Code: -22
+Call: ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_USERS DROP CONSTRAINT FK_USERS_USERS_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.333--ServerSession(22824669)--Connection(17195887)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.333--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.334--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [ALTER TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.335--ServerSession(22824669)--Connection(6950390)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.335--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.356--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [ALTER TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_HISTORYOCCURRENCE DROP CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.356--ServerSession(22824669)--Connection(9678998)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.357--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.358--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [ALTER TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.359--ServerSession(22824669)--Connection(3041529)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.36--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.361--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [ALTER TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_FRIENDSHIPREQUEST DROP CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.361--ServerSession(22824669)--Connection(15582192)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.363--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.363--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [ALTER TABLE USERS_ROLES]
+Error Code: -22
+Call: ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_users_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.392--ServerSession(22824669)--Connection(31122929)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.393--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.394--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [ALTER TABLE USERS_ROLES]
+Error Code: -22
+Call: ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID
+Query: DataModifyQuery(sql="ALTER TABLE USERS_ROLES DROP CONSTRAINT FK_USERS_ROLES_roles_ID")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.396--ServerSession(22824669)--Connection(3031962)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE PLACE
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.397--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.397--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: PLACE in statement [DROP TABLE PLACE]
+Error Code: -22
+Call: DROP TABLE PLACE
+Query: DataModifyQuery(sql="DROP TABLE PLACE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.398--ServerSession(22824669)--Connection(22573338)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE PLACE (ID BIGINT NOT NULL, DESCRIPTION VARCHAR(255), NAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.404--ServerSession(22824669)--Connection(23688477)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE MEASUREMENT
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.406--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.407--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: MEASUREMENT in statement [DROP TABLE MEASUREMENT]
+Error Code: -22
+Call: DROP TABLE MEASUREMENT
+Query: DataModifyQuery(sql="DROP TABLE MEASUREMENT")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.407--ServerSession(22824669)--Connection(8907948)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE MEASUREMENT (ID BIGINT NOT NULL, FINGERPRINTS LONGVARBINARY, MEASURETIME TIMESTAMP, PLACE_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.408--ServerSession(22824669)--Connection(29573821)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE USERS
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.409--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.41--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS in statement [DROP TABLE USERS]
+Error Code: -22
+Call: DROP TABLE USERS
+Query: DataModifyQuery(sql="DROP TABLE USERS")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.41--ServerSession(22824669)--Connection(5418016)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE USERS (ID BIGINT NOT NULL, NAME VARCHAR(255), PASSWORD VARCHAR(255), USERNAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.411--ServerSession(22824669)--Connection(27427503)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE ROLES
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.412--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.414--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: ROLES in statement [DROP TABLE ROLES]
+Error Code: -22
+Call: DROP TABLE ROLES
+Query: DataModifyQuery(sql="DROP TABLE ROLES")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.421--ServerSession(22824669)--Connection(22438126)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE ROLES (ID BIGINT NOT NULL, ROLENAME VARCHAR(255), PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.422--ServerSession(22824669)--Connection(32882556)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE HISTORYOCCURRENCE
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.423--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.424--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: HISTORYOCCURRENCE in statement [DROP TABLE HISTORYOCCURRENCE]
+Error Code: -22
+Call: DROP TABLE HISTORYOCCURRENCE
+Query: DataModifyQuery(sql="DROP TABLE HISTORYOCCURRENCE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.424--ServerSession(22824669)--Connection(15630474)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE HISTORYOCCURRENCE (ID BIGINT NOT NULL, MEASURETIME TIMESTAMP, PLACE_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.425--ServerSession(22824669)--Connection(3738228)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE FRIENDSHIPREQUEST
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.426--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.427--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: FRIENDSHIPREQUEST in statement [DROP TABLE FRIENDSHIPREQUEST]
+Error Code: -22
+Call: DROP TABLE FRIENDSHIPREQUEST
+Query: DataModifyQuery(sql="DROP TABLE FRIENDSHIPREQUEST")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.427--ServerSession(22824669)--Connection(14516027)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE FRIENDSHIPREQUEST (ID BIGINT NOT NULL, SENDER_ID BIGINT, PRIMARY KEY (ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.433--ServerSession(22824669)--Connection(30151565)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE USERS_USERS
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.433--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.434--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_USERS in statement [DROP TABLE USERS_USERS]
+Error Code: -22
+Call: DROP TABLE USERS_USERS
+Query: DataModifyQuery(sql="DROP TABLE USERS_USERS")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.434--ServerSession(22824669)--Connection(18324803)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE USERS_USERS (USERS_ID BIGINT NOT NULL, friends_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, friends_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.439--ServerSession(22824669)--Connection(22395671)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE USERS_HISTORYOCCURRENCE
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.44--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.441--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_HISTORYOCCURRENCE in statement [DROP TABLE USERS_HISTORYOCCURRENCE]
+Error Code: -22
+Call: DROP TABLE USERS_HISTORYOCCURRENCE
+Query: DataModifyQuery(sql="DROP TABLE USERS_HISTORYOCCURRENCE")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.442--ServerSession(22824669)--Connection(23994159)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE USERS_HISTORYOCCURRENCE (USERS_ID BIGINT NOT NULL, history_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, history_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.442--ServerSession(22824669)--Connection(12676966)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE USERS_FRIENDSHIPREQUEST
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.443--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.444--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_FRIENDSHIPREQUEST in statement [DROP TABLE USERS_FRIENDSHIPREQUEST]
+Error Code: -22
+Call: DROP TABLE USERS_FRIENDSHIPREQUEST
+Query: DataModifyQuery(sql="DROP TABLE USERS_FRIENDSHIPREQUEST")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.445--ServerSession(22824669)--Connection(24688084)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE USERS_FRIENDSHIPREQUEST (USERS_ID BIGINT NOT NULL, receivedFriendRequests_ID BIGINT NOT NULL, PRIMARY KEY (USERS_ID, receivedFriendRequests_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.445--ServerSession(22824669)--Connection(32085229)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DROP TABLE USERS_ROLES
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.446--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CALL 1
+
+INFO: [EL Warning]: 2012-05-05 13:16:59.447--ServerSession(22824669)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--Exception [EclipseLink-4002] (Eclipse Persistence Services - 2.3.0.v20110604-r9504): org.eclipse.persistence.exceptions.DatabaseException
+Internal Exception: java.sql.SQLException: Table not found: USERS_ROLES in statement [DROP TABLE USERS_ROLES]
+Error Code: -22
+Call: DROP TABLE USERS_ROLES
+Query: DataModifyQuery(sql="DROP TABLE USERS_ROLES")
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.447--ServerSession(22824669)--Connection(3182876)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE USERS_ROLES (users_ID BIGINT NOT NULL, roles_ID BIGINT NOT NULL, PRIMARY KEY (users_ID, roles_ID))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.448--ServerSession(22824669)--Connection(8833399)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE PLACE ADD CONSTRAINT UNQ_PLACE_2 UNIQUE (NAME)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.48--ServerSession(22824669)--Connection(22197709)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS ADD CONSTRAINT UNQ_USERS_3 UNIQUE (USERNAME)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.482--ServerSession(22824669)--Connection(18722724)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE MEASUREMENT ADD CONSTRAINT FK_MEASUREMENT_PLACE_ID FOREIGN KEY (PLACE_ID) REFERENCES PLACE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.484--ServerSession(22824669)--Connection(32916964)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE HISTORYOCCURRENCE ADD CONSTRAINT FK_HISTORYOCCURRENCE_PLACE_ID FOREIGN KEY (PLACE_ID) REFERENCES PLACE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.485--ServerSession(22824669)--Connection(23501174)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE FRIENDSHIPREQUEST ADD CONSTRAINT FK_FRIENDSHIPREQUEST_SENDER_ID FOREIGN KEY (SENDER_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.49--ServerSession(22824669)--Connection(15023822)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_USERS ADD CONSTRAINT FK_USERS_USERS_friends_ID FOREIGN KEY (friends_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.5--ServerSession(22824669)--Connection(8277772)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_USERS ADD CONSTRAINT FK_USERS_USERS_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.501--ServerSession(22824669)--Connection(7846612)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_HISTORYOCCURRENCE ADD CONSTRAINT FK_USERS_HISTORYOCCURRENCE_history_ID FOREIGN KEY (history_ID) REFERENCES HISTORYOCCURRENCE (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.505--ServerSession(22824669)--Connection(9097801)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_HISTORYOCCURRENCE ADD CONSTRAINT FK_USERS_HISTORYOCCURRENCE_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.507--ServerSession(22824669)--Connection(32750599)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_FRIENDSHIPREQUEST ADD CONSTRAINT USERS_FRIENDSHIPREQUEST_receivedFriendRequests_ID FOREIGN KEY (receivedFriendRequests_ID) REFERENCES FRIENDSHIPREQUEST (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.508--ServerSession(22824669)--Connection(12419060)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_FRIENDSHIPREQUEST ADD CONSTRAINT FK_USERS_FRIENDSHIPREQUEST_USERS_ID FOREIGN KEY (USERS_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.51--ServerSession(22824669)--Connection(18582092)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_ROLES ADD CONSTRAINT FK_USERS_ROLES_users_ID FOREIGN KEY (users_ID) REFERENCES USERS (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.512--ServerSession(22824669)--Connection(18136208)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--ALTER TABLE USERS_ROLES ADD CONSTRAINT FK_USERS_ROLES_roles_ID FOREIGN KEY (roles_ID) REFERENCES ROLES (ID)
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.532--ServerSession(22824669)--Connection(25911694)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--CREATE TABLE SEQUENCE (SEQ_NAME VARCHAR(50) NOT NULL, SEQ_COUNT NUMERIC(38), PRIMARY KEY (SEQ_NAME))
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.534--ServerSession(22824669)--Connection(28435107)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--DELETE FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN_TABLE
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.538--ServerSession(22824669)--Connection(26630117)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--SELECT * FROM SEQUENCE WHERE SEQ_NAME = SEQ_GEN_TABLE
+
+INFO: [EL Fine]: 2012-05-05 13:16:59.57--ServerSession(22824669)--Connection(11072941)--Thread(Thread[admin-thread-pool-4848(2),5,grizzly-kernel])--INSERT INTO SEQUENCE(SEQ_NAME, SEQ_COUNT) values (SEQ_GEN_TABLE, 0)
+

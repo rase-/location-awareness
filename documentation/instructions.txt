@@ -1,0 +1,20 @@
+The software is deployed for use in heroku http://strong-moon-3981.herokuapp.com/
+
+Test users for the sofware: admin - testadmin, testadmin (username, password)
+                            user - testuser, testuser (username, password)
+                            
+Registering is pretty straight forward, just click register and fill the form
+
+User functionality for viewing friend information and adding friend is also straightforward and requires to introduction
+
+Localizing user is done by running the python script in folder pythonScript, copypasting the output to the form in http://strong-moon-3981.herokuapp.com/user/history, choosing the wanted localization type and clicking submit. The nearest estimate is then added to last 10 locations shown on the page
+
+Admin functionalities are also very straight forward, just follow links to manage users (promote admin or delete user)
+
+Managing places as admin is also easy: http://strong-moon-3981.herokuapp.com/admin/places shows all places as link, and a form to create places. Description is not necessary, but place name is, and has to be unique. Choosing a link to a place opens a form for editing place name (again has to be unique) and description. Clicking manage measurements opens a view showing all measurements (info can be seen by clicking the link, as well as deleting from the view) and new measurements can be added by running the aforementioned python script and copypasting the output to the form, followed by a submit
+
+Deploying the software locally is easy by having the largest (all) installation of NetBeans, opening the project, and clicking run, choosing an appropriate server (like tomcat or glassfish). Also an installation of maven is needed (the project is a maven web-project). The local version of the project does not need a database since it uses a memory-based database (mainly for easy and fast testing even if database structure is constatly changing)
+
+Another (not so easy) way to deploy the application is to deploy it to heroku (where it uses a PostGre SQL database) or build the project (mvn install) and moving the war to an appropriate location (server)
+
+Enjoy!
