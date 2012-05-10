@@ -20,7 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author tonykova
  */
-@Controller("rest")
+@Controller
+@RequestMapping("rest")
 public class RestInterfaceController {
     @Autowired
     AuthenticationService auth;
@@ -28,15 +29,18 @@ public class RestInterfaceController {
     @Autowired
     LocalizationService localizationService;
     
-    @RequestMapping(method = RequestMethod.POST, value = "/localization/")
+    @RequestMapping(value = "/localization")
     @ResponseBody
     public LocalizationResponse localizeByDefaultMethod(@ModelAttribute MeasurementContainer measurementContainer) {
+        System.out.println("in method");
         if(!auth.authenticate(measurementContainer.getUsername(), measurementContainer.getPassword())) {
+            System.out.println("in if");
             LocalizationResponse response = new LocalizationResponse();
             response.setPlaceName("");
             response.setAuthenticationSuccessful(false);
             return response;
         }
+        System.out.println("not in if");
         return localizationService.localize(measurementContainer);
     }
     

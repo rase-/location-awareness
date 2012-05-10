@@ -19,6 +19,8 @@ public class MeasurementContainer {
     
     private List<Fingerprint> fingerprints;
     
+    public MeasurementContainer() {};
+    
     public MeasurementContainer(String username, String password, List<Fingerprint> fingerprints) {
         this.username = username;
         this.password = password;
