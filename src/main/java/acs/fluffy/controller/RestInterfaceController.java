@@ -11,10 +11,7 @@ import acs.fluffy.restinterface.domain.MeasurementContainer;
 import acs.fluffy.service.LocalizationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -29,9 +26,9 @@ public class RestInterfaceController {
     @Autowired
     LocalizationService localizationService;
     
-    @RequestMapping(value = "/localization")
+    @RequestMapping(value = "/localization", method = RequestMethod.PUT, consumes = "application/json")
     @ResponseBody
-    public LocalizationResponse localizeByDefaultMethod(@ModelAttribute MeasurementContainer measurementContainer) {
+    public LocalizationResponse localizeByDefaultMethod(@RequestBody MeasurementContainer measurementContainer) {
         System.out.println("in method");
         if(!auth.authenticate(measurementContainer.getUsername(), measurementContainer.getPassword())) {
             System.out.println("in if");
