@@ -5,6 +5,8 @@
 package acs.fluffy.service;
 
 import acs.fluffy.form.MeasurementForm;
+import acs.fluffy.restinterface.domain.LocalizationResponse;
+import acs.fluffy.restinterface.domain.MeasurementContainer;
 
 /**
  * Used to localize user by different means
@@ -17,4 +19,10 @@ public interface LocalizationService {
      * @param measurementform Measurement information
      */
     void localize(String username, MeasurementForm measurementform);
+    
+    /**
+     * Localizes user by MeasurementContainer sent by a client software
+     * @param container MeasurementContainer wrapping userinformation and fingerprints
+     */
+    LocalizationResponse localize(MeasurementContainer container);
 }

@@ -19,6 +19,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import acs.fluffy.repository.PlaceRepository;
 import acs.fluffy.repository.UserRepository;
+import acs.fluffy.restinterface.domain.LocalizationResponse;
+import acs.fluffy.restinterface.domain.MeasurementContainer;
 
 /**
  *
@@ -64,16 +66,47 @@ public class LocalizationServiceImpl implements LocalizationService {
 
         cutDownHistoryOccurrencesTo9(user.getHistory());
         
-        HistoryOccurrence occurrence = new HistoryOccurrence();
-        occurrence.setPlace(leastErraneousPlace);
-        occurrence.setMeasureTime(new Date());
-        user.getHistory().add(occurrence);
-        userRepository.save(user);
+        saveAsHistoryOccurrence(leastErraneousPlace, user);
     }
+    
 
     private void cutDownHistoryOccurrencesTo9(List<HistoryOccurrence> occurrences) {
         while (occurrences.size() >= 10) {
             occurrences.remove(0);
         }
+    }
+    
+    private void saveAsHistoryOccurrence(Place place, User user) {
+        HistoryOccurrence occurrence = new HistoryOccurrence();
+        occurrence.setPlace(place);
+        occurrence.setMeasureTime(new Date());
+        user.getHistory().add(occurrence);
+        userRepository.save(user);
+    }
+    
+    @Override
+    @Transactional
+    public LocalizationResponse localize(MeasurementContainer container) {
+        User user = userRepository.findByUsername(container.getUsername());
+        List<Fingerprint> userPrints = container.getFingerprints();
+        // We sort the prints to make matching easier
+        Collections.sort(userPrints);
+        List<Place> places = placeRepository.findAll();
+
+        //If there are no places we won't do anything
+        if (places.isEmpty()) {
+            return new LocalizationResponse();
+        }
+
+        Place leastErraneousPlace = localizationAlgorithms.get(container.getType()).localize(places, userPrints);
+
+        cutDownHistoryOccurrencesTo9(user.getHistory());
+        
+        saveAsHistoryOccurrence(leastErraneousPlace, user);
+        
+        LocalizationResponse response = new LocalizationResponse();
+        response.setPlaceName(leastErraneousPlace.getName());
+        response.setAuthenticationSuccessful(true);
+        return response;
     }
 }
