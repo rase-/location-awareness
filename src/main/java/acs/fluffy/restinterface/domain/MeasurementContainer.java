@@ -6,13 +6,14 @@ package acs.fluffy.restinterface.domain;
 
 import acs.fluffy.domain.Fingerprint;
 import acs.fluffy.form.LocalizationType;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  *
  * @author tonykova
  */
-public class MeasurementContainer {
+public class MeasurementContainer implements Serializable {
     private String username;
     private String password;
     private LocalizationType type;

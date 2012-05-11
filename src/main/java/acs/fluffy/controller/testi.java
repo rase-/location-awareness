@@ -6,11 +6,15 @@ import acs.fluffy.form.LocalizationType;
 import acs.fluffy.restinterface.domain.MeasurementContainer;
 import com.google.gson.Gson;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
@@ -40,12 +44,16 @@ public class testi {
         String json = mapper.toJson(container);
         System.out.println(json);
         
-        HttpPut put = new HttpPut("http://strong-moon-3981.herokaupp.com/rest/localization");
+        HttpPost post = new HttpPost("http://localhost:8080/v6-runko/rest/localization/");
         StringEntity entity = new StringEntity(json);
-        entity.setContentEncoding("utf-8");
-        entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
-        put.setEntity(entity);
+//        entity.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+        entity.setContentType("application/json");
+        post.setEntity(entity);
+        
         HttpClient client = new DefaultHttpClient();
-        HttpResponse response = client.execute(put);
+        HttpResponse response = client.execute(post);
+        InputStream is = response.getEntity().getContent();
+        String output = IOUtils.toString(is);
+        System.out.println(output);
     }
 }
