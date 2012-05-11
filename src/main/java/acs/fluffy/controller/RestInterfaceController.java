@@ -26,7 +26,7 @@ public class RestInterfaceController {
     @Autowired
     LocalizationService localizationService;
     
-    @RequestMapping(value = "/localization", method = RequestMethod.PUT, consumes = "application/json")
+    @RequestMapping(value = "/localization", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
     @ResponseBody
     public LocalizationResponse localizeByDefaultMethod(@RequestBody MeasurementContainer measurementContainer) {
         System.out.println("in method");
