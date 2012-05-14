@@ -51,5 +51,6 @@
     </bean>
     
     <!-- db-konffit -->
-    <import resource="spring-database.xml" />
-</beans>
+        <import resource="spring-database.xml" />
+    
+    </beans>

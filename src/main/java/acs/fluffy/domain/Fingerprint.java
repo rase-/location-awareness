@@ -16,9 +16,9 @@ public class Fingerprint implements Serializable, Comparable {
     private String macAddress;
     private double signalStrength;
 
-    public Fingerprint(String macad, double rss) {
-        this.macAddress = macad;
-        this.signalStrength = rss;
+    public Fingerprint(String macAddress, double receivedSignalStrength) {
+        this.macAddress = macAddress;
+        this.signalStrength = receivedSignalStrength;
     }
 
     public String getMacAddress() {

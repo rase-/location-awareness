@@ -8,6 +8,7 @@ import acs.fluffy.domain.Fingerprint;
 import acs.fluffy.form.LocalizationType;
 import java.io.Serializable;
 import java.util.List;
+import org.codehaus.jackson.annotate.JsonTypeInfo;
 
 /**
  *
