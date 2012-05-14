@@ -50,7 +50,9 @@ public class RestInterfaceController {
     }
     
     @RequestMapping(value = "/placeData", method = RequestMethod.POST, consumes = "application/json")
-    public void receivePlaceInformation(@RequestBody Place place) {
+    public void receivePlaceInformation(@RequestParam String json) {
+        Gson mapper = new Gson();
+        Place place = mapper.fromJson(json, Place.class);
         placeService.save(place);
     }
     
